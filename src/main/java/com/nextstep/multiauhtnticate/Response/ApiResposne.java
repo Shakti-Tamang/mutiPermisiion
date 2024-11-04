@@ -16,7 +16,7 @@ public class ApiResposne<T> {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("status code ")
-    private String statusCode;
+    private int statusCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("data ")
