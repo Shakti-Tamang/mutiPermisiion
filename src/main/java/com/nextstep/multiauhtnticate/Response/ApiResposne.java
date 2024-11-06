@@ -19,6 +19,10 @@ public class ApiResposne<T> {
     private int statusCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("refresh token")
+    private int refreshToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("data ")
     private   T data;
 

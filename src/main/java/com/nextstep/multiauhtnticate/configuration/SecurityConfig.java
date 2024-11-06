@@ -59,7 +59,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain AdminsecurityFilterChain(HttpSecurity http) throws  Exception{
+    public SecurityFilterChain adminSecurityFilterChain(HttpSecurity http) throws  Exception{
         http
                 .csrf().disable()
                 .authorizeRequests()
@@ -67,8 +67,7 @@ public class SecurityConfig {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
-                        "/swagger-ui/**").permitAll()
-                .antMatchers("/api/v1/authenticate").permitAll()
+                        "/swagger-ui/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
@@ -77,6 +76,65 @@ public class SecurityConfig {
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public SecurityFilterChain StudentSecurityFilterChain(HttpSecurity http) throws  Exception{
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/swagger-ui.html",
+                        "/webjars/**",
+                        "/swagger-ui/**").hasRole("Student")
+                .anyRequest().authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return  http.build();
+    }
+
+    @Bean
+    public SecurityFilterChain TeacherSecurityFilterChain(HttpSecurity http) throws  Exception{
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/swagger-ui.html",
+                        "/webjars/**",
+                        "/swagger-ui/**").hasRole("Teacher")
+                .anyRequest().authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return  http.build();
+    }
+    @Bean
+    public  SecurityFilterChain LibrarianSecurityFilterChain(HttpSecurity http)throws  Exception{
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
+                        "/swagger-resources/**",
+                        "/swagger-ui.html",
+                        "/webjars/**",
+                        "/swagger-ui/**").hasRole("Librarian")
+                .anyRequest().authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return  http.build();
     }
 
     @Bean
