@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/swaggerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/Health.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/filter/JwtAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Response/ApiResposne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Response/ApiResposne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/LibrararyManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/LibrararyManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +51,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable" />
   </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nextstep.multiauhtnticate.App" />
+      <module name="multifactorauthenticate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -77,6 +92,8 @@
       <workItem from="1730024292893" duration="419000" />
       <workItem from="1730119351966" duration="1728000" />
       <workItem from="1730195694142" duration="6398000" />
+      <workItem from="1730726784342" duration="8284000" />
+      <workItem from="1730804255697" duration="448000" />
     </task>
     <servers />
   </component>
@@ -84,9 +101,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="137" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1730728059970">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="137" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.720@0.0.1366.720" timestamp="1730728059970" />
     <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1730708010527">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser/0.0.1366.720@0.0.1366.720" timestamp="1730708010527" />
+    <state x="350" y="102" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1730728058245">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="350" y="102" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.720@0.0.1366.720" timestamp="1730728058245" />
+    <state x="163" y="33" key="IDE.errors.dialog" timestamp="1730727856243">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="163" y="33" key="IDE.errors.dialog/0.0.1366.720@0.0.1366.720" timestamp="1730727856243" />
   </component>
 </project>

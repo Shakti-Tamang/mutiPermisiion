@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @Validated
-@RequestMapping("multi/app/v1")
+@RequestMapping("/app/v1")
 public class LibrararyManagement {
 
     @Autowired
@@ -24,7 +24,7 @@ public class LibrararyManagement {
 //    container. Beans help organize and inject dependencies in your application, allowing
 //    for easier configuration and reusability of components.
 
-    @PostMapping("save user")
+    @PostMapping("/saveUser")
     public ResponseEntity<ApiResposne>saveUser(@Valid @RequestBody UserModel userModel){
 
         userService.saveUser(userModel);
