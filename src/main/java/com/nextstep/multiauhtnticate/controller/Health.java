@@ -14,7 +14,10 @@ public class Health {
 
     @GetMapping("getHealth")
     public ResponseEntity<ApiResposne>getHelth(){
-            ApiResposne apiResposne=ApiResposne.builder().message("success").statusCode(HttpStatus.OK.value()).build();
+
+        String check="Success";
+
+            ApiResposne apiResposne=ApiResposne.builder().message(check).statusCode(HttpStatus.OK.value()).build();
             return ResponseEntity.status(HttpStatus.OK).body(apiResposne);
     }
 }
