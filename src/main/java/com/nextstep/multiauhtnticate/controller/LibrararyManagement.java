@@ -5,6 +5,7 @@ import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.Response.ApiResposne;
 import com.nextstep.multiauhtnticate.service.JwtService;
+import com.nextstep.multiauhtnticate.service.UserDetailInfo;
 import com.nextstep.multiauhtnticate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -54,7 +55,8 @@ public class LibrararyManagement {
         UserModel user=userRepository.findByEmail( userModel.getEmail());
         Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),userModel.getPassword()));
         if(authentication.isAuthenticated()){
-            String token=jwtService.GenerateToken(user.getUsername());
+            UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
+            String token=jwtService.GenerateToken(userDetails);
 
             ApiResposne apiResposne=ApiResposne.builder().message("success").statusCode(HttpStatus.OK.value()).Token( token).build();
 
