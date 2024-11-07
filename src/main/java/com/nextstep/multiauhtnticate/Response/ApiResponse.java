@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApiResposne<T> {
+public class ApiResponse<T> {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("message")
     private   String message;
@@ -22,7 +22,7 @@ public class ApiResposne<T> {
     @JsonProperty("status code ")
     private int statusCode;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("refresh token")
+    @JsonProperty(" token")
     private String Token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

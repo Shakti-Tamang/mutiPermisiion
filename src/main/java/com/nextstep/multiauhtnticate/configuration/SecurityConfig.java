@@ -42,7 +42,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
+                .antMatchers("/app/v1/saveUser","/app/v1/logInUser","/v2/api-docs",
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
@@ -87,7 +87,7 @@ public class SecurityConfig {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
-                        "/swagger-ui/**").hasRole("Student")
+                        "/swagger-ui/**").hasRole("STUDENT")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
@@ -107,7 +107,7 @@ public class SecurityConfig {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
-                        "/swagger-ui/**").hasRole("Teacher")
+                        "/swagger-ui/**").hasRole("TEACHER")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
@@ -126,7 +126,7 @@ public class SecurityConfig {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
-                        "/swagger-ui/**").hasRole("Librarian")
+                        "/swagger-ui/**").hasRole("LIBRARIAN")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
