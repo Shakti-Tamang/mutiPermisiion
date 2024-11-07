@@ -2,13 +2,17 @@ package com.nextstep.multiauhtnticate.Response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ApiResposne<T> {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("message")
@@ -17,10 +21,13 @@ public class ApiResposne<T> {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("status code ")
     private int statusCode;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("refresh token")
+    private String Token;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("refresh token")
-    private int refreshToken;
+    private String refreshToken;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("data ")

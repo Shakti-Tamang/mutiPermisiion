@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -16,8 +17,20 @@ import java.util.function.Function;
 
 @Component
 public class JwtService {
+//    In JWT (JSON Web Tokens) within a Spring Boot application, claims are essentially
+//    pieces of information embedded in the token. They hold data about the user or the token
+//    itself, and can include things like the user's username, roles, and token expiration
+//    time.
 
-    public static final String SECRET = "357638792F423F4428472B4B6250655368566D597133743677397A2443264629";
+    //inject key
+    @Value("${jwt.secret}")
+    private String secret;
+
+    @Value("${jwt.expiration}")
+    private long expiration;
+
+    @Value("${jwt.refresh-token-expiration}")
+    private long refreshTokenExpiration;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -50,13 +63,16 @@ public class JwtService {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public String GenerateToken(String username) {
+    public String GenerateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username);
+        return createToken(claims, userDetails.getUsername(),expiration);
+    }
+    public String GenerateRefreshToken(UserDetails userDetails){
+return createToken(new HashMap<>(),userDetails.getUsername(),refreshTokenExpiration);
     }
 
 
-    private String createToken(Map<String, Object> claims, String username) {
+    private String createToken(Map<String, Object> claims, String username,long JwtExpiration) {
 
         return Jwts.builder()
                 .setClaims(claims)
@@ -64,12 +80,12 @@ public class JwtService {
                 .setIssuedAt(new Date(System.currentTimeMillis()))
 
 //                for a month    expiry date of JWT token
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 365L))
+                .setExpiration(new Date(System.currentTimeMillis() + JwtExpiration))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
     private Key getSignKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        byte[] keyBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
