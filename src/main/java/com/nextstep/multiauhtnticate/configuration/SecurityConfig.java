@@ -42,12 +42,15 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/app/v1/saveUser","/app/v1/logInUser","/v2/api-docs",
+                .antMatchers("/app/v1/saveUser","/app/v1/logInUser","/app/v2/getHealth","/v2/api-docs",
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**",
                         "/swagger-ui/**").permitAll()
-                .antMatchers("/api/v1/authenticate").permitAll()
+                .antMatchers("/app/v3/addBook").hasRole("ADMIN")
+                .antMatchers().hasRole("STUDENT")
+                .antMatchers().hasRole("LIBRARIAN")
+                .antMatchers().hasRole("TEACHER")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
@@ -56,85 +59,6 @@ public class SecurityConfig {
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
-    }
-
-    @Bean
-    public SecurityFilterChain adminSecurityFilterChain(HttpSecurity http) throws  Exception{
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
-                        "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/swagger-ui/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
-    }
-
-    @Bean
-    public SecurityFilterChain StudentSecurityFilterChain(HttpSecurity http) throws  Exception{
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
-                        "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/swagger-ui/**").hasRole("STUDENT")
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return  http.build();
-    }
-
-    @Bean
-    public SecurityFilterChain TeacherSecurityFilterChain(HttpSecurity http) throws  Exception{
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
-                        "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/swagger-ui/**").hasRole("TEACHER")
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return  http.build();
-    }
-    @Bean
-    public  SecurityFilterChain LibrarianSecurityFilterChain(HttpSecurity http)throws  Exception{
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/toleSudar/v1/saveMember","/toleSudar/v1/loginAsMember","/v2/api-docs",
-                        "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/swagger-ui/**").hasRole("LIBRARIAN")
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return  http.build();
     }
 
     @Bean
