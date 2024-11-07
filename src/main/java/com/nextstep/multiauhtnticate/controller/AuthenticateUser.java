@@ -20,7 +20,7 @@ import javax.validation.Valid;
 @RestController
 @Validated
 @RequestMapping("/app/v1")
-public class LibrararyManagement {
+public class AuthenticateUser {
 //json to dart and dart to json serializer and deserializer
     @Autowired
     UserService userService;
