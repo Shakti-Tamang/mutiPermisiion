@@ -1,7 +1,6 @@
 package com.nextstep.multiauhtnticate.controller;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.nextstep.multiauhtnticate.Response.ApiResposne;
+import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Health {
 
     @GetMapping("getHealth")
-    public ResponseEntity<ApiResposne>getHelth(){
+    public ResponseEntity<ApiResponse>getHelth(){
 
         String check="Success";
 
-            ApiResposne apiResposne=ApiResposne.builder().message(check).statusCode(HttpStatus.OK.value()).build();
-            return ResponseEntity.status(HttpStatus.OK).body(apiResposne);
+            ApiResponse apiResponse = ApiResponse.builder().message(check).statusCode(HttpStatus.OK.value()).build();
+            return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

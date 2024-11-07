@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,9 +28,10 @@ public class UserDetailInfo  implements UserDetails {
     public UserDetailInfo(UserModel member) {
         username = member.getUsername();
         password = member.getPassword();
-        authorities = Arrays.stream(member.getRole().split(","))
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
+        // Retrieve the role from the user's Role entity and convert it to a SimpleGrantedAuthority
+        this.authorities = Collections.singletonList(
+                new SimpleGrantedAuthority(member.getUser_role().getRoleName().name())
+        );
     }
 
     @Override

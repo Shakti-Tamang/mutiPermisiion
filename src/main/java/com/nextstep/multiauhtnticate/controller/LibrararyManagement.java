@@ -1,9 +1,8 @@
 package com.nextstep.multiauhtnticate.controller;
 
-import com.google.api.Http;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
-import com.nextstep.multiauhtnticate.Response.ApiResposne;
+import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.JwtService;
 import com.nextstep.multiauhtnticate.service.UserDetailInfo;
 import com.nextstep.multiauhtnticate.service.UserService;
@@ -17,7 +16,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Random;
 
 @RestController
 @Validated
@@ -40,31 +38,39 @@ public class LibrararyManagement {
 //    for easier configuration and reusability of components.
 
     @PostMapping("/saveUser")
-    public ResponseEntity<ApiResposne>saveUser(@Valid @RequestBody UserModel userModel){
+    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserModel userModel){
+        UserModel userModel1=userRepository.findByUsername(userModel.getUsername());
 
         userService.saveUser(userModel);
+        if(userModel1 !=null){
+            ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
 
-        ApiResposne apiResposne=ApiResposne.builder().message("success").statusCode(HttpStatus.OK.value()).build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
+        }
 
-        return ResponseEntity.status(HttpStatus.OK).body(apiResposne);
+        ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
+
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     @PostMapping("/logInUser")
-    public ResponseEntity<ApiResposne>logInUser(@RequestBody UserModel userModel){
+    public ResponseEntity<ApiResponse>logInUser(@RequestBody UserModel userModel){
+        System.out.println(userModel.getEmail());
+        UserModel userModel1=userRepository.findByEmail(userModel.getEmail());
 
-        UserModel user=userRepository.findByEmail( userModel.getEmail());
-        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),userModel.getPassword()));
+
+        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(),userModel.getPassword()));
         if(authentication.isAuthenticated()){
             UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
             String token=jwtService.GenerateToken(userDetails);
+             String refrenceToken=jwtService.GenerateToken(userDetails);
+            ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).Token( token).refreshToken(refrenceToken).build();
 
-            ApiResposne apiResposne=ApiResposne.builder().message("success").statusCode(HttpStatus.OK.value()).Token( token).build();
-
-            return ResponseEntity.status(HttpStatus.OK).body(apiResposne);
+            return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
         }
         else{
-            ApiResposne apiResposne=ApiResposne.builder().message("unautorized access").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
-            return  ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResposne);
+            ApiResponse apiResponse = ApiResponse.builder().message("unautorized access").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
+            return  ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResponse);
 
         }
 
