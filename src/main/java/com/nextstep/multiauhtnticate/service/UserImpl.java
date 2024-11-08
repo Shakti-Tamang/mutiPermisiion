@@ -1,6 +1,8 @@
 package com.nextstep.multiauhtnticate.service;
 
+import com.nextstep.multiauhtnticate.DTO.UserDto;
 import com.nextstep.multiauhtnticate.Model.Role;
+
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.RoleRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
@@ -21,24 +23,23 @@ public class UserImpl implements UserService {
     RoleRepo roleRepo;
 
     @Override
-    public void saveUser(UserModel userModel) {
+    public void saveUser(UserModel userModel1) {
 
-
-        Role role=roleRepo.findByRoleName(Role.Roles.valueOf(userModel.getRoleName()));
+        Role role=roleRepo.findByRoleName(Role.Roles.valueOf(userModel1.getRoleName()));
         if(role==null){
             role=new Role();
             String hashId = StringUtills.generateRandomAlphaNumeric(10);
             role.setId(hashId);
-          role.setRoleName(Role.Roles.valueOf(userModel.getRoleName()));
+          role.setRoleName(Role.Roles.valueOf(userModel1.getRoleName()));
           roleRepo.save(role);
         }
-        userModel.setUser_role(role);
+        userModel1.setUser_role(role);
         //check user exist with id or not
-        if(userModel.getId()==null || userModel.getId().isEmpty()) {
+        if(userModel1.getId()==null || userModel1.getId().isEmpty()) {
             String hashId = StringUtills.generateRandomAlphaNumeric(10);
-            userModel.setId(hashId);
+            userModel1.setId(hashId);
         }
-        userModel.setPassword(passwordEncoder.encode(userModel.getPassword()));
-        userRepository.save(userModel);
+        userModel1.setPassword(passwordEncoder.encode(userModel1.getPassword()));
+        userRepository.save(userModel1);
     }
 }

@@ -1,21 +1,22 @@
-package com.nextstep.multiauhtnticate.Model;
+package com.nextstep.multiauhtnticate.DTO;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.nextstep.multiauhtnticate.Model.UserModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Data
-@Entity
-@NoArgsConstructor
 @AllArgsConstructor
-public class AddBook {
-
-//    @ApiModelProperty(hidden = true)
+@NoArgsConstructor
+public class SaveBookDto {//    @ApiModelProperty(hidden = true)
     @Schema(hidden = true)
     @Id
 
@@ -48,6 +49,7 @@ public class AddBook {
     //this for new version
     @Schema(hidden = true)
 
-    private UserModel userToAddBook;
+    private UserDto userToAddBook;
+
 
 }
