@@ -6,6 +6,8 @@ import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.JwtService;
 import com.nextstep.multiauhtnticate.service.UserDetailInfo;
 import com.nextstep.multiauhtnticate.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,7 @@ import javax.validation.Valid;
 @RestController
 @Validated
 @RequestMapping("/app/v1")
+@Tag(name = "Authenticate User", description = "Registaring authenticated user") // Use @Tag instead of @Api
 public class AuthenticateUser {
 //json to dart and dart to json serializer and deserializer
     @Autowired
