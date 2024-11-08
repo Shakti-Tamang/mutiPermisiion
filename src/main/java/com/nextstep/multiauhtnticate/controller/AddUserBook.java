@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import io.swagger.v3.oas.annotations.tags.Tag;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/app/v3")
 @Validated
+@RequestMapping("/app/v3")
+@Tag(name = "AddBook", description = "API for adding books") // Use @Tag instead of @Api
 public class AddUserBook {
 
     @Autowired
@@ -26,9 +27,7 @@ public class AddUserBook {
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addBook")
     public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody AddBook addBook){
-
         addBookService.addBook(addBook);
-
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 

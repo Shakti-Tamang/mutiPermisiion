@@ -2,6 +2,7 @@ package com.nextstep.multiauhtnticate.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddBook {
+
+    @ApiModelProperty(hidden = true)
     @Id
 
     private String id;
@@ -38,7 +41,12 @@ public class AddBook {
     @ManyToOne()
     @JoinColumn(name = "user_id")
     @JsonBackReference("userAddBook")
-    @ApiModelProperty(hidden = true)
+    //this for lower version
+//    @ApiModelProperty(hidden = true)
+
+    //this for new version
+    @Schema(hidden = true)
+
     private UserModel userToAddBook;
 
 }

@@ -42,16 +42,13 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/app/v1/saveUser","/app/v1/logInUser","/app/v2/getHealth","/v2/api-docs",
+                .antMatchers("/app/v1/saveUser", "/app/v1/logInUser", "/app/v2/getHealth","/api/v1/auth/**",
+                        "/v3/api-docs",
+                        "/v2/api-docs",
                         "/swagger-resources/**",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/swagger-ui/**").permitAll()
-                .antMatchers("/app/v3/addBook").hasRole("ADMIN")
-                .antMatchers().hasRole("STUDENT")
-                .antMatchers().hasRole("LIBRARIAN")
-                .antMatchers().hasRole("TEACHER")
-                .anyRequest().authenticated()
+                        "/swagger-ui/**",
+                        "/webjars/**").permitAll()
+                .antMatchers("/app/v3/**").authenticated()  // All /app/v3 endpoints require JWT
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
