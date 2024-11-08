@@ -10,4 +10,5 @@ public interface AddBookService {
     public void addBook(AddBook addBook);
     public void deleteAddedBookById(String id);
     public List<AddBook>listOfAddedBook();
+    public void updateBookAdded(String id,AddBook addBook);
 }

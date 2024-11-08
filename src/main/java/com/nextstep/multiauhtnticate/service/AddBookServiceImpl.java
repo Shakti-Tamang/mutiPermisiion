@@ -11,10 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 @Service
 public class AddBookServiceImpl implements AddBookService {
@@ -64,5 +61,20 @@ public class AddBookServiceImpl implements AddBookService {
         List<AddBook>list=  bookRepo.findAll();
 
         return list.isEmpty()?new ArrayList<>():list;
+    }
+
+    @Override
+    public void updateBookAdded(String id, AddBook addBook) {
+        Optional<AddBook> addBook1=bookRepo.findById(id);
+
+        if(addBook1.isPresent()){
+            AddBook addBook2=addBook1.get();
+
+            addBook2.setBootQuantity(addBook.getBootQuantity());
+            addBook2.setBookCategory(addBook.getBookCategory());
+            addBook2.setAvailability(addBook.getAvailability());
+            addBook2.setBookTitle(addBook.getBookTitle());
+            bookRepo.save(addBook2);
+        }
     }
 }

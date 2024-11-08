@@ -1,6 +1,7 @@
 package com.nextstep.multiauhtnticate.controller;
 
 import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
+import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
@@ -56,6 +57,22 @@ public class AddUserBook {
         addBookService.deleteAddedBookById(id);
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessfullyDeleted").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @PatchMapping("/editById")
+    @Operation(summary = "Edit By Id",description = "This rout helps to edit by id")
+    public ResponseEntity<ApiResponse>editBookById(@RequestParam("id") String id, @RequestBody UpdateBookDto updateBookDto){
+        AddBook addBook=new AddBook();
+        addBook.setBookTitle(updateBookDto.getBookTitle());
+        addBook.setAvailability(updateBookDto.getAvailability());
+        addBook.setBookCategory(updateBookDto.getBookCategory());
+        addBook.setBootQuantity(updateBookDto.getBootQuantity());
+        addBookService.updateBookAdded(id,addBook);
+
+        ApiResponse apiResponse=ApiResponse.builder().message("successfully edited").statusCode(HttpStatus.OK.value()).build();
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+
     }
 
 }

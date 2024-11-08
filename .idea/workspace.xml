@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,7 +67,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.App">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -102,7 +123,7 @@
       <workItem from="1731044025316" duration="406000" />
       <workItem from="1731044447702" duration="148000" />
       <workItem from="1731044641487" duration="550000" />
-      <workItem from="1731045206474" duration="19694000" />
+      <workItem from="1731045206474" duration="22637000" />
     </task>
     <servers />
   </component>
@@ -114,14 +135,18 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="137" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.720@0.0.1366.720" timestamp="1730963330312" />
-    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1731065836608">
+    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1731071335760">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser/0.0.1366.720@0.0.1366.720" timestamp="1731065836608" />
+    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser/0.0.1366.720@0.0.1366.720" timestamp="1731071335760" />
     <state x="350" y="102" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1730728058245">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="350" y="102" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.720@0.0.1366.720" timestamp="1730728058245" />
+    <state x="426" y="224" width="516" height="283" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1731073808076">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="426" y="224" width="516" height="283" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.720@0.0.1366.720" timestamp="1731073808076" />
     <state x="123" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1730965701889">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -130,38 +155,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1730953594710" />
-    <state width="1311" height="274" key="GridCell.Tab.0.bottom" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.0.bottom" timestamp="1731075506329">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.0.center" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731075506329" />
+    <state width="1311" height="235" key="GridCell.Tab.0.center" timestamp="1731075506328">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.0.left" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731075506328" />
+    <state width="1311" height="235" key="GridCell.Tab.0.left" timestamp="1731075506327">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.0.right" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731075506327" />
+    <state width="1311" height="235" key="GridCell.Tab.0.right" timestamp="1731075506329">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.1.bottom" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731075506329" />
+    <state width="1311" height="235" key="GridCell.Tab.1.bottom" timestamp="1731075506330">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.1.center" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731075506330" />
+    <state width="1311" height="235" key="GridCell.Tab.1.center" timestamp="1731075506330">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.1.left" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731075506330" />
+    <state width="1311" height="235" key="GridCell.Tab.1.left" timestamp="1731075506330">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
-    <state width="1311" height="274" key="GridCell.Tab.1.right" timestamp="1731068463717">
+    <state width="1311" height="235" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731075506330" />
+    <state width="1311" height="235" key="GridCell.Tab.1.right" timestamp="1731075506330">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="274" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="235" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731075506330" />
     <state x="163" y="33" key="IDE.errors.dialog" timestamp="1730727856243">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -170,6 +195,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="100" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.720@0.0.1366.720" timestamp="1731036856481" />
+    <state x="75" y="0" key="SettingsEditor" timestamp="1731069622895">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="75" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1731069622895" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1730865723534">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
