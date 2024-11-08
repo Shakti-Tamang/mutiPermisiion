@@ -21,20 +21,20 @@ public class AddBook {
 
     private String id;
 
-    @Column(nullable = false)
-    @ApiModelProperty(required = true)
+    @Column(nullable = true)
+    @Schema(required = true)
     private String bookTitle;
 
-    @Column(nullable = false)
-    @ApiModelProperty(required = true)
+    @Column(nullable = true)
+    @Schema(required = true)
     private String bookCategory;
 
-    @Column(nullable = false)
-    @ApiModelProperty(required = true)
+    @Column(nullable = true)
+    @Schema(required = true)
     private int bootQuantity;
 
-    @Column(nullable = false)
-    @ApiModelProperty(required = true)
+    @Column(nullable = true)
+    @Schema(required = true)
     private String availability;
 
 
