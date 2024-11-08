@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/LogInDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role$Roles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/UserModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +118,7 @@
       <workItem from="1731044025316" duration="406000" />
       <workItem from="1731044447702" duration="148000" />
       <workItem from="1731044641487" duration="550000" />
-      <workItem from="1731045206474" duration="13414000" />
+      <workItem from="1731045206474" duration="18095000" />
     </task>
     <servers />
   </component>
@@ -144,10 +130,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="137" y="8" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.720@0.0.1366.720" timestamp="1730963330312" />
-    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1730981909572">
+    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1731065836608">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser/0.0.1366.720@0.0.1366.720" timestamp="1730981909572" />
+    <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser/0.0.1366.720@0.0.1366.720" timestamp="1731065836608" />
     <state x="350" y="102" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1730728058245">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -160,38 +146,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1730953594710" />
-    <state width="1311" height="3" key="GridCell.Tab.0.bottom" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.0.bottom" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.0.center" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.0.center" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.0.left" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.0.left" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.0.right" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.0.right" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.1.bottom" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.1.bottom" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.1.center" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.1.center" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.1.left" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.1.left" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
-    <state width="1311" height="3" key="GridCell.Tab.1.right" timestamp="1731062036985">
+    <state width="1311" height="3" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="3" key="GridCell.Tab.1.right" timestamp="1731066806411">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731062036985" />
+    <state width="1311" height="3" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
     <state x="163" y="33" key="IDE.errors.dialog" timestamp="1730727856243">
       <screen x="0" y="0" width="1366" height="720" />
     </state>

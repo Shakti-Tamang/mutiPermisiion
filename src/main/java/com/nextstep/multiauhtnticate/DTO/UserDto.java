@@ -16,34 +16,19 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
-    @Schema(hidden = true)
-    @Id
-    private String id;
 
     @Column(nullable = false)
     private String username;
 
-    //    @ApiModelProperty(hidden = true)
-    @Schema(hidden = true)
-    @ManyToOne()
-    @JoinColumn(name = "user_role")
-    @JsonBackReference("users_role")
-    private Role user_role;
-
     @Column(nullable = false)
     @Email(message = "must be email")
     private String email;
+
 
     @Column(nullable = false)
     private String password;
 
     // New field for role name as String (this will be sent from client)
     private String roleName;
-
-    //    @ApiModelProperty(hidden = true)
-    @Schema(hidden = true)
-    @OneToMany(mappedBy = "userToAddBook",cascade = CascadeType.ALL)
-    @JsonManagedReference("userAddBook")
-    private List<SaveBookDto> listOfBook;
 
 }

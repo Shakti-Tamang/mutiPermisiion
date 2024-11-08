@@ -46,7 +46,11 @@ public class AuthenticateUser {
     @Operation(summary = "Register User",description = "This API is used to register The user")
     public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userModel){
         UserModel userModel1=userRepository.findByUsername(userModel.getUsername());
+        if(userModel1 !=null){
+            ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
 
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
+        }
         // Map UserDto to UserModel manually
         UserModel userModel2 = new UserModel();
 
@@ -55,11 +59,6 @@ public class AuthenticateUser {
         userModel2.setPassword(userModel.getPassword());
         userModel2.setRoleName(userModel.getRoleName());
         userService.saveUser(userModel2);
-        if(userModel1 !=null){
-            ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
-
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
-        }
 
         ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
 

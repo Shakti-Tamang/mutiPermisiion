@@ -31,12 +31,12 @@ public class AddUserBook {
     @Operation(summary = "Add a new book", description = "Adds a new book to the library")
     public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBook){
         AddBook addBook1=new AddBook();
-
         addBook1.setBookTitle(addBook.getBookTitle());
         addBook1.setAvailability(addBook.getAvailability());
         addBook1.setBookCategory(addBook.getBookCategory());
         addBook1.setBootQuantity(addBook.getBootQuantity());
         addBookService.addBook(addBook1);
+
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
