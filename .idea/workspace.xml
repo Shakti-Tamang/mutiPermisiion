@@ -3,24 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/UserModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +102,7 @@
       <workItem from="1731044025316" duration="406000" />
       <workItem from="1731044447702" duration="148000" />
       <workItem from="1731044641487" duration="550000" />
-      <workItem from="1731045206474" duration="18095000" />
+      <workItem from="1731045206474" duration="19694000" />
     </task>
     <servers />
   </component>
@@ -146,38 +130,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1730953594710" />
-    <state width="1311" height="3" key="GridCell.Tab.0.bottom" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.0.bottom" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.0.center" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.0.center" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.0.left" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.0.left" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.0.right" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.0.right" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.1.bottom" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.1.bottom" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.1.center" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.1.center" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.1.left" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.1.left" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
-    <state width="1311" height="3" key="GridCell.Tab.1.right" timestamp="1731066806411">
+    <state width="1311" height="274" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
+    <state width="1311" height="274" key="GridCell.Tab.1.right" timestamp="1731068463717">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="3" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731066806411" />
+    <state width="1311" height="274" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731068463717" />
     <state x="163" y="33" key="IDE.errors.dialog" timestamp="1730727856243">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -190,5 +174,9 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1366.720@0.0.1366.720" timestamp="1730865723534" />
+    <state x="262" y="-1" key="search.everywhere.popup" timestamp="1731068215004">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="262" y="-1" key="search.everywhere.popup/0.0.1366.720@0.0.1366.720" timestamp="1731068215004" />
   </component>
 </project>
