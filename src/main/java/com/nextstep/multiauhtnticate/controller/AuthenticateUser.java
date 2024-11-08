@@ -1,12 +1,14 @@
 package com.nextstep.multiauhtnticate.controller;
 
+import com.nextstep.multiauhtnticate.DTO.LogInDto;
+import com.nextstep.multiauhtnticate.DTO.UserDto;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.JwtService;
 import com.nextstep.multiauhtnticate.service.UserDetailInfo;
 import com.nextstep.multiauhtnticate.service.UserService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,10 +43,18 @@ public class AuthenticateUser {
 //    for easier configuration and reusability of components.
 
     @PostMapping("/saveUser")
-    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserModel userModel){
+    @Operation(summary = "Register User",description = "This API is used to register The user")
+    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userModel){
         UserModel userModel1=userRepository.findByUsername(userModel.getUsername());
 
-        userService.saveUser(userModel);
+        // Map UserDto to UserModel manually
+        UserModel userModel2 = new UserModel();
+
+        userModel2.setUsername(userModel.getUsername());
+        userModel2.setEmail(userModel.getEmail());
+        userModel2.setPassword(userModel.getPassword());
+        userModel2.setRoleName(userModel.getRoleName());
+        userService.saveUser(userModel2);
         if(userModel1 !=null){
             ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
 
@@ -57,7 +67,8 @@ public class AuthenticateUser {
     }
 
     @PostMapping("/logInUser")
-    public ResponseEntity<ApiResponse>logInUser(@RequestBody UserModel userModel){
+    @Operation(summary = "Authenticate User",description = "This API is Used To Log in The User")
+    public ResponseEntity<ApiResponse>logInUser(@RequestBody LogInDto userModel){
         System.out.println(userModel.getEmail());
         UserModel userModel1=userRepository.findByEmail(userModel.getEmail());
 

@@ -1,5 +1,6 @@
 package com.nextstep.multiauhtnticate.service;
 
+import com.nextstep.multiauhtnticate.DTO.UserDto;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

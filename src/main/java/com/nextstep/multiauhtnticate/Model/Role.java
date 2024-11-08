@@ -2,6 +2,7 @@ package com.nextstep.multiauhtnticate.Model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 public class Role {
 
+    @Schema(hidden = true)
     @Id
     private String id;
 

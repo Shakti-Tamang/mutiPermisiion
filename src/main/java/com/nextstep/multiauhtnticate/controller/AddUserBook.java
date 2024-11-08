@@ -1,8 +1,10 @@
 package com.nextstep.multiauhtnticate.controller;
 
+import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,8 +28,15 @@ public class AddUserBook {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addBook")
-    public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody AddBook addBook){
-        addBookService.addBook(addBook);
+    @Operation(summary = "Add a new book", description = "Adds a new book to the library")
+    public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBook){
+        AddBook addBook1=new AddBook();
+
+        addBook1.setBookTitle(addBook.getBookTitle());
+        addBook1.setAvailability(addBook.getAvailability());
+        addBook1.setBookCategory(addBook.getBookCategory());
+        addBook1.setBootQuantity(addBook.getBootQuantity());
+        addBookService.addBook(addBook1);
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
