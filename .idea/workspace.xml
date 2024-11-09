@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V4__changeFrom_numberTo.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/SaveBookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V3__add_book_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V3__add_book_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V4__changeFrom_numberTo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V4__changeFrom_numberTo.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +74,16 @@
     </option>
   </component>
   <component name="ProjectId" id="2nLYSyT8zPILItVN2JigNBB3Q3E" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="redshift&#10;postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -110,6 +100,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Spring Boot.App">
@@ -167,12 +160,15 @@
       <workItem from="1731044447702" duration="148000" />
       <workItem from="1731044641487" duration="550000" />
       <workItem from="1731045206474" duration="29015000" />
-      <workItem from="1731135948198" duration="8121000" />
+      <workItem from="1731135948198" duration="9690000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="177" y="0" key="#HTTP_Proxy" timestamp="1731135190081">
@@ -187,10 +183,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="153" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.720@0.0.1366.720" timestamp="1731135543510" />
-    <state x="365" y="145" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1731140627820">
+    <state x="365" y="145" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1731149228419">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="365" y="145" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.720@0.0.1366.720" timestamp="1731140627820" />
+    <state x="365" y="145" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.720@0.0.1366.720" timestamp="1731149228419" />
     <state x="444" y="2" key="#com.intellij.ide.util.MemberChooser" timestamp="1731071335760">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -211,38 +207,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1731144860668" />
-    <state width="1311" height="444" key="GridCell.Tab.0.bottom" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.0.bottom" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.0.center" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.0.center" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.0.left" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.0.left" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.0.right" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.0.right" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.1.bottom" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.1.bottom" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.1.center" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.1.center" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.1.left" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.1.left" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
-    <state width="1311" height="444" key="GridCell.Tab.1.right" timestamp="1731147617711">
+    <state width="1311" height="444" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
+    <state width="1311" height="444" key="GridCell.Tab.1.right" timestamp="1731149334925">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="444" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731147617711" />
+    <state width="1311" height="444" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731149334925" />
     <state width="236" height="549" key="HiddenNamespacesPopup" timestamp="1731135291562">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -255,10 +251,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="100" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.720@0.0.1366.720" timestamp="1731036856481" />
-    <state x="75" y="0" key="SettingsEditor" timestamp="1731135764704">
+    <state x="70" y="0" key="SettingsEditor" timestamp="1731148520997">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="75" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1731135764704" />
+    <state x="70" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1731148520997" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1730865723534">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
