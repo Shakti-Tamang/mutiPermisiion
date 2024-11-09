@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "add_book")
 public class AddBook {
 
     @ApiModelProperty(hidden = true)

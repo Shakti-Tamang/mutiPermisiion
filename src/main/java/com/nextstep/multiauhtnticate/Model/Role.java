@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 @Data
 @Entity
+@Table(name = "roles")
 public class Role {
 
     @Schema(hidden = true)
