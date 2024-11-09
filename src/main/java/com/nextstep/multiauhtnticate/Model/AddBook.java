@@ -15,25 +15,26 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class AddBook {
 
-//    @ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden = true)
     @Schema(hidden = true)
     @Id
 
     private String id;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     @Schema(required = true)
     private String bookTitle;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     @Schema(required = true)
     private String bookCategory;
 
-    @Column(nullable = true)
+//its object so can be nullable
+    @Column(nullable = true) // nullable=true allows the field to be null
     @Schema(required = true)
-    private int bootQuantity;
+    private Integer bootQuantity;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     @Schema(required = true)
     private String availability;
 

@@ -65,16 +65,27 @@ public class AddBookServiceImpl implements AddBookService {
 
     @Override
     public void updateBookAdded(String id, AddBook addBook) {
-        Optional<AddBook> addBook1=bookRepo.findById(id);
+        Optional<AddBook> addBookOptional = bookRepo.findById(id);
 
-        if(addBook1.isPresent()){
-            AddBook addBook2=addBook1.get();
+        if (addBookOptional.isPresent()) {
+            AddBook existingBook = addBookOptional.get();
 
-            addBook2.setBootQuantity(addBook.getBootQuantity());
-            addBook2.setBookCategory(addBook.getBookCategory());
-            addBook2.setAvailability(addBook.getAvailability());
-            addBook2.setBookTitle(addBook.getBookTitle());
-            bookRepo.save(addBook2);
+            // Only update fields that are non-null in the provided addBook object
+            if (addBook.getBootQuantity() != null) {
+                existingBook.setBootQuantity(addBook.getBootQuantity());
+            }
+            if (addBook.getBookCategory() != null) {
+                existingBook.setBookCategory(addBook.getBookCategory());
+            }
+            if (addBook.getAvailability() != null) {
+                existingBook.setAvailability(addBook.getAvailability());
+            }
+            if (addBook.getBookTitle() != null) {
+                existingBook.setBookTitle(addBook.getBookTitle());
+            }
+
+            bookRepo.save(existingBook);
         }
     }
+
 }
