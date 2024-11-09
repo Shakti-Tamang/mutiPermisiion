@@ -27,7 +27,7 @@ public class SaveBookDto {
 
     @Column(nullable = false)
     @ApiModelProperty(required = true)
-    private int bootQuantity;
+    private Integer numberOfBook; // Updated field name
 
     @Column(nullable = false)
     @ApiModelProperty(required = true)

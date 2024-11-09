@@ -33,7 +33,7 @@ public class AddUserBook {
         addBook1.setBookTitle(addBook.getBookTitle());
         addBook1.setAvailability(addBook.getAvailability());
         addBook1.setBookCategory(addBook.getBookCategory());
-        addBook1.setBootQuantity(addBook.getBootQuantity());
+        addBook1.setNumberOfBook(addBook.getNumberOfBook());
         addBookService.addBook(addBook1);
 
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
@@ -67,7 +67,7 @@ public class AddUserBook {
         addBook.setBookTitle(updateBookDto.getBookTitle());
         addBook.setAvailability(updateBookDto.getAvailability());
         addBook.setBookCategory(updateBookDto.getBookCategory());
-        addBook.setBootQuantity(updateBookDto.getBootQuantity());
+        addBook.setNumberOfBook(updateBookDto.getNumberOfBook());
         addBookService.updateBookAdded(id,addBook);
 
         ApiResponse apiResponse=ApiResponse.builder().message("successfully edited").statusCode(HttpStatus.OK.value()).build();

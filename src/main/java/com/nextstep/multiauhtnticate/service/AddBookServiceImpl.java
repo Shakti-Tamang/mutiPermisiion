@@ -71,8 +71,8 @@ public class AddBookServiceImpl implements AddBookService {
             AddBook existingBook = addBookOptional.get();
 
             // Only update fields that are non-null in the provided addBook object
-            if (addBook.getBootQuantity() != null) {
-                existingBook.setBootQuantity(addBook.getBootQuantity());
+            if (addBook.getNumberOfBook() != null) {
+                existingBook.setNumberOfBook(addBook.getNumberOfBook());
             }
             if (addBook.getBookCategory() != null) {
                 existingBook.setBookCategory(addBook.getBookCategory());
