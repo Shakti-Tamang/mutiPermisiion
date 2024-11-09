@@ -33,7 +33,7 @@ public class AddBook {
 //its object so can be nullable
     @Column(nullable = true) // nullable=true allows the field to be null
     @Schema(required = true)
-    private Integer bootQuantity;
+    private Integer numberOfBook; // Updated field name
 
     @Column(nullable = false)
     @Schema(required = true)

@@ -22,7 +22,7 @@ public class UpdateBookDto {
 
     @Column(nullable = true) // Change to true
     @Schema(required = true) // Change required to false
-    private Integer bootQuantity; // Change from int to Integer
+    private Integer numberOfBook; // Updated field name
 
     @Column(nullable = true) // Change to true
     @Schema(required = true) // Change required to false

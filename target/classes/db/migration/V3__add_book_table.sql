@@ -1,5 +1,4 @@
 
-
 CREATE TABLE IF NOT EXISTS add_book (
     id VARCHAR(255) PRIMARY KEY,
     book_title VARCHAR(255) NOT NULL,
