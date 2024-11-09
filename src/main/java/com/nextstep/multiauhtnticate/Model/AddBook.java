@@ -13,7 +13,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "add_book")
+@Table(name = "add_book",indexes = {
+        @Index(name = "index_add_book_id", columnList = "id")})
 public class AddBook {
 
     @ApiModelProperty(hidden = true)
