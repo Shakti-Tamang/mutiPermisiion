@@ -1,6 +1,3 @@
--- Migration script to create roles table
-
--- Create the roles table
 CREATE TABLE IF NOT EXISTS roles (
     id VARCHAR(255) PRIMARY KEY,
     role_name VARCHAR(255) NOT NULL UNIQUE
