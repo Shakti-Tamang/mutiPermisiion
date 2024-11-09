@@ -1,16 +1,11 @@
 package com.nextstep.multiauhtnticate.DTO;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.nextstep.multiauhtnticate.Model.AddBook;
-import com.nextstep.multiauhtnticate.Model.Role;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.util.List;
+
 
 @Data
 @AllArgsConstructor

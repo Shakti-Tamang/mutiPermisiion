@@ -1,3 +1,4 @@
+
 CREATE TABLE users (
     id VARCHAR(255) PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
@@ -7,3 +8,4 @@ CREATE TABLE users (
     user_role VARCHAR(255),
     FOREIGN KEY (user_role) REFERENCES roles(id) -- Assuming roles is the name of the Role table
 );
+
