@@ -71,21 +71,27 @@ public class AuthenticateUser {
         System.out.println(userModel.getEmail());
         UserModel userModel1=userRepository.findByEmail(userModel.getEmail());
 
+if(userModel1 !=null) {
+    Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(), userModel.getPassword()));
+    if (authentication.isAuthenticated()) {
+        UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
+        String token = jwtService.GenerateToken(userDetails);
+        String refrenceToken = jwtService.GenerateToken(userDetails);
+        ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).Token(token).refreshToken(refrenceToken).build();
 
-        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(),userModel.getPassword()));
-        if(authentication.isAuthenticated()){
-            UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
-            String token=jwtService.GenerateToken(userDetails);
-             String refrenceToken=jwtService.GenerateToken(userDetails);
-            ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).Token( token).refreshToken(refrenceToken).build();
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    } else {
+        ApiResponse apiResponse = ApiResponse.builder().message("user not found").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResponse);
 
-            return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-        }
-        else{
-            ApiResponse apiResponse = ApiResponse.builder().message("unautorized access").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
-            return  ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResponse);
+    }
+}
+else{
 
-        }
+    ApiResponse apiResponse = ApiResponse.builder().message("unautorized access").statusCode(HttpStatus.NOT_FOUND.value()).build();
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
+
+}
 
     }
 
