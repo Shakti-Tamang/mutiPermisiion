@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BookRepo extends JpaRepository<AddBook,String> {
@@ -15,5 +16,5 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
     public List<AddBook> findByUserToAddBook(UserModel userModel);
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
-    public AddBook findByIdExists(@Param("id") String id);
+    public Optional<AddBook> findByIdExists(@Param("id") String id);
 }

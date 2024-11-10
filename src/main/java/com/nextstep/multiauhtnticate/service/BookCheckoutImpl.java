@@ -12,13 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 public class BookCheckoutImpl implements BookCheckoutService {
     @Autowired
     BookCheckoutRepo bookCheckoutRepo;
@@ -27,55 +29,50 @@ public class BookCheckoutImpl implements BookCheckoutService {
     @Autowired
     BookRepo bookRepo;
 
+    @Transactional
     @Override
-    public void saveCheckout(BookCheckout bookCheckout,String id) {
-        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-        UserModel loggedInUser=userRepository.findByUsername(authentication.getName());
+    public void saveCheckout(BookCheckout bookCheckout, String UserId, String BookId) {
 
-//        List<AddBook>list=bookRepo.findByUserToAddBook(loggedInUser);
-        AddBook book=bookRepo.findByIdExists(id);
+        UserModel loggedInUser = userRepository.findById(UserId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        AddBook book = bookRepo.findById(BookId)
+                .orElseThrow(() -> new RuntimeException("Book not found"));
 
 
-        if(loggedInUser !=null && book!=null){
+        bookCheckout.setUsersBook(loggedInUser);
+        bookCheckout.setAddBookCheckout(book);
 
-            bookCheckout.setUsersBook(loggedInUser);
-            bookCheckout.setAddBookCheckout(book);
 
-            if(loggedInUser.getListOfBookCheckout()==null && book.getListOfCheckoutBook()==null){
+        if (loggedInUser.getListOfBookCheckout() == null) {
+            loggedInUser.setListOfBookCheckout(new ArrayList<>());
+        }
+        if (book.getListOfCheckoutBook() == null) {
+            book.setListOfCheckoutBook(new ArrayList<>());
+        }
 
-                loggedInUser.setListOfBook(new ArrayList<>());
-                book.setListOfCheckoutBook(new ArrayList<>());
-            }
             loggedInUser.getListOfBookCheckout().add(bookCheckout);
             book.getListOfCheckoutBook().add(bookCheckout);
-            userRepository.save(loggedInUser);
 
-            int quantity=book.getNumberOfBook();
-            quantity--;
-            if (quantity > 0) {
-                quantity--;
-                book.setNumberOfBook(quantity);
-                bookRepo.save(book);
-            } else {
+
+            int quantity = book.getNumberOfBook();
+            if (quantity <= 0) {
                 throw new RuntimeException("No copies of the book available for checkout");
             }
-            bookRepo.save(book);
-            if(bookCheckout.getId()==null || bookCheckout.getId().isEmpty()){
-                String hashId= StringUtills.generateRandomAlphaNumeric(7);
+            book.setNumberOfBook(quantity - 1);
+
+
+
+            if (bookCheckout.getId() == null || bookCheckout.getId().isEmpty()) {
+                String hashId = StringUtills.generateRandomAlphaNumeric(7);
                 bookCheckout.setId(hashId);
             }
 
+
+        userRepository.save(loggedInUser);
+        bookRepo.save(book);
+
             bookCheckoutRepo.save(bookCheckout);
-        }
 
-//        The purpose of the stream line in the above code is to locate a specific
-//        book in the list of books (retrieved for the logged-in user) that matches
-//        the ID of the book to be checked out. Here’s a breakdown of what each part
-//    of this line does:
-
-//        AddBook selectedBook = list.stream()
-//                .filter(book -> book.getId().equals(bookCheckout.getAddBookCheckout().getId()))
-//                .findFirst()
-//                .orElseThrow(() -> new RuntimeException("Selected book not found"));
     }
+
 }

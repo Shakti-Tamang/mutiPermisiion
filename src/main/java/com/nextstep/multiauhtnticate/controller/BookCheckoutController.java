@@ -23,11 +23,11 @@ public class BookCheckoutController {
     BookCheckoutService bookCheckoutService;
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @Operation(summary = "record of book checkout",description = "add books checkout rexords")
+    @Operation(summary = "add record of book checkout",description = "add books checkout rexords")
     @PostMapping("/bookCheckout")
-    public ResponseEntity<ApiResponse>bookChekoutBuUsers(@Valid @RequestBody BookCheckout bookCheckout, @RequestParam("book_added_id") String book_added_id){
+    public ResponseEntity<ApiResponse>bookChekoutBuUsers(@Valid @RequestBody BookCheckout bookCheckout,@RequestParam("user_id") String user_id, @RequestParam("book_added_id") String book_added_id){
 
-        bookCheckoutService.saveCheckout(bookCheckout,book_added_id);
+        bookCheckoutService.saveCheckout(bookCheckout,user_id,book_added_id);
 
         ApiResponse apiResponse=ApiResponse.builder().message("Succesfully checkout").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
