@@ -1,6 +1,7 @@
 package com.nextstep.multiauhtnticate.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -52,5 +54,12 @@ public class AddBook {
     @Schema(hidden = true)
 
     private UserModel userToAddBook;
+
+    @Schema(hidden = true)
+    @OneToMany(mappedBy = "addBookCheckout",cascade = CascadeType.ALL)
+    @JsonManagedReference("bookaddedCheckout")
+    private List<BookCheckout>listOfCheckoutBook;
+
+
 
 }
