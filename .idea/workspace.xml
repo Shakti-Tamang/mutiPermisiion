@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/BookCheckout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/BookCheckoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V6__book_checkout.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/UserModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +165,7 @@
       <workItem from="1731044447702" duration="148000" />
       <workItem from="1731044641487" duration="550000" />
       <workItem from="1731045206474" duration="29015000" />
-      <workItem from="1731135948198" duration="15878000" />
+      <workItem from="1731135948198" duration="18763000" />
     </task>
     <servers />
   </component>
@@ -182,10 +180,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="177" y="0" key="#HTTP_Proxy/0.0.1366.720@0.0.1366.720" timestamp="1731135190081" />
-    <state x="175" y="0" key="#SQL_Dialects" timestamp="1731174200378">
+    <state x="175" y="0" key="#SQL_Dialects" timestamp="1731225019065">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="175" y="0" key="#SQL_Dialects/0.0.1366.720@0.0.1366.720" timestamp="1731174200378" />
+    <state x="175" y="0" key="#SQL_Dialects/0.0.1366.720@0.0.1366.720" timestamp="1731225019065" />
     <state x="153" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1731135543510">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -214,38 +212,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1731144860668" />
-    <state width="1311" height="57" key="GridCell.Tab.0.bottom" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.0.bottom" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.0.center" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.0.center" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.0.left" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.0.left" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.0.right" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.0.right" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.1.bottom" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.1.bottom" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.1.center" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.1.center" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.1.left" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.1.left" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
-    <state width="1311" height="57" key="GridCell.Tab.1.right" timestamp="1731213836848">
+    <state width="1311" height="189" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
+    <state width="1311" height="189" key="GridCell.Tab.1.right" timestamp="1731213943217">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="57" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731213836848" />
+    <state width="1311" height="189" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731213943217" />
     <state width="236" height="549" key="HiddenNamespacesPopup" timestamp="1731135291562">
       <screen x="0" y="0" width="1366" height="720" />
     </state>

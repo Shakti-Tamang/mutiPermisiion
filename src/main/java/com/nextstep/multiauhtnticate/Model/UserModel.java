@@ -49,4 +49,9 @@ public class UserModel {
     @JsonManagedReference("userAddBook")
     private List<AddBook> listOfBook;
 
+    @Schema(hidden = true)
+    @OneToMany(mappedBy = "usersBook",cascade = CascadeType.ALL)
+    @JsonManagedReference("bookCheckout")
+    private List<BookCheckout>listOfBookCheckout;
+
 }
