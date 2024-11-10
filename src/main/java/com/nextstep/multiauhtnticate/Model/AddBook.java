@@ -42,8 +42,6 @@ public class AddBook {
     @Schema(required = true)
     private String availability;
 
-
-
     @ManyToOne()
     @JoinColumn(name = "user_id")
     @JsonBackReference("userAddBook")
