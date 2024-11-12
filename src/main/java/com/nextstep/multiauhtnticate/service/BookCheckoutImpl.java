@@ -7,18 +7,10 @@ import com.nextstep.multiauhtnticate.Repository.BookCheckoutRepo;
 import com.nextstep.multiauhtnticate.Repository.BookRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
-import io.netty.util.internal.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import springfox.documentation.spi.service.contexts.SecurityContext;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BookCheckoutImpl implements BookCheckoutService {
@@ -29,10 +21,14 @@ public class BookCheckoutImpl implements BookCheckoutService {
     @Autowired
     BookRepo bookRepo;
 
+//
+//    All operations within the method are treated as a single unit of work. If any
+//    operation fails (e.g., if saving the user or the book fails), the entire
+//    transaction is rolled back, and none of the changes are committed to the
+//    database. This prevents partial updates that could lead to inconsistencies.
     @Transactional
     @Override
     public void saveCheckout(BookCheckout bookCheckout, String UserId, String BookId) {
-
         UserModel loggedInUser = userRepository.findById(UserId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         AddBook book = bookRepo.findById(BookId)
@@ -70,8 +66,7 @@ public class BookCheckoutImpl implements BookCheckoutService {
 
         userRepository.save(loggedInUser);
         bookRepo.save(book);
-
-            bookCheckoutRepo.save(bookCheckout);
+        bookCheckoutRepo.save(bookCheckout);
 
     }
 

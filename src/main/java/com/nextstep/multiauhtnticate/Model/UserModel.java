@@ -54,4 +54,9 @@ public class UserModel {
     @JsonManagedReference("bookCheckout")
     private List<BookCheckout>listOfBookCheckout;
 
+    @Schema(hidden = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonManagedReference("fineUser")
+    private FineModel fineUser;
+
 }
