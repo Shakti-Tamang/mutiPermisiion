@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/FineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/FineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/FineSevcieImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/FineSevcieImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/OpenAPIConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/OpenAPIConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V4__changeFrom_numberTo.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V4__changeFrom_numberTo.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +186,7 @@
       <workItem from="1731399981147" duration="504000" />
       <workItem from="1731408795562" duration="113000" />
       <workItem from="1731412502223" duration="3012000" />
-      <workItem from="1731460055579" duration="672000" />
+      <workItem from="1731460055579" duration="3335000" />
     </task>
     <servers />
   </component>
@@ -290,9 +289,9 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1366.720@0.0.1366.720" timestamp="1730865723534" />
-    <state x="262" y="-1" key="search.everywhere.popup" timestamp="1731068215004">
+    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1731477591171">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="262" y="-1" key="search.everywhere.popup/0.0.1366.720@0.0.1366.720" timestamp="1731068215004" />
+    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1366.720@0.0.1366.720" timestamp="1731477591171" />
   </component>
 </project>
