@@ -38,7 +38,7 @@ public class FineSevcieImpl implements FineService {
         List<BookCheckout> list = bookCheckoutRepo.findByCheckoutDateBeforeAndDueDateFalse(now);
         for (BookCheckout li : list) {
             if (fineModel.getId() == null || fineModel.getId().isEmpty()) {
-
+                String hahId = StringUtills.generateRandomAlphaNumeric(6);
                 //find difference between due date and present datye:
                   long lateToSubmitDate= ChronoUnit.DAYS.between(li.getDueDate(),now);
 
@@ -46,9 +46,8 @@ public class FineSevcieImpl implements FineService {
                      short amount=fineModel.getFine();
                      if(amount>0){
                          fineModel.setFine((short) (amount+10));
-
                      }
-                      String hahId = StringUtills.generateRandomAlphaNumeric(6);
+
                       fineModel.setId(hahId);
                   }
             }
