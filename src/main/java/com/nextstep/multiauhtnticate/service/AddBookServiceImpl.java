@@ -5,6 +5,9 @@ import com.nextstep.multiauhtnticate.Repository.BookRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -23,6 +26,7 @@ public class AddBookServiceImpl implements AddBookService {
     public void addBook(AddBook addBook) {
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
 
             UserModel loggedInUser = userRepository.findByUsername(authentication.getName());
 
@@ -84,6 +88,13 @@ public class AddBookServiceImpl implements AddBookService {
 
             bookRepo.save(existingBook);
         }
+    }
+
+
+    @Override
+    public Page<AddBook> getPeginatedProducts(String searchTerm, int page, int size) {
+        Pageable pageable=PageRequest.of(page,size);
+        return  bookRepo.findByBookTitleContaining(searchTerm,pageable);
     }
 
 }

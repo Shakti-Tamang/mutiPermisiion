@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookCheckoutImpl implements BookCheckoutService {
@@ -68,6 +70,25 @@ public class BookCheckoutImpl implements BookCheckoutService {
         bookRepo.save(book);
         bookCheckoutRepo.save(bookCheckout);
 
+    }
+
+    @Override
+    public void deleteByCode(String id) {
+        bookCheckoutRepo.deleteById(id);
+    }
+
+    @Override
+    public BookCheckout getById(String id) {
+       Optional<BookCheckout> bookCheckoutOne=bookCheckoutRepo.findById(id);
+       return bookCheckoutOne.orElse(null);
+
+    }
+
+    @Override
+    public List<BookCheckout> listOfBookCheckout() {
+
+        List<BookCheckout>list=bookCheckoutRepo.findAll();
+        return null;
     }
 
 }
