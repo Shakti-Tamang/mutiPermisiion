@@ -88,7 +88,7 @@ public class BookCheckoutImpl implements BookCheckoutService {
     public List<BookCheckout> listOfBookCheckout() {
 
         List<BookCheckout>list=bookCheckoutRepo.findAll();
-        return null;
+        return list.isEmpty()?new ArrayList<>():list;
     }
 
 }
