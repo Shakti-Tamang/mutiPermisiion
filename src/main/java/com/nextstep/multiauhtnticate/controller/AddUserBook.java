@@ -7,6 +7,7 @@ import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -75,7 +76,14 @@ public class AddUserBook {
 
     }
 
+  @GetMapping("/getPegination")
+  @Operation(summary = "get no.of pegination",description = "this rout provide all no.of pegination")
+    public ResponseEntity<ApiResponse>getAllPegination(@RequestParam("bookTitle") String bookTitle,@RequestParam("size") int size,@RequestParam("number") int number){
+   Page<AddBook> list=addBookService.getPeginatedProducts(bookTitle, number,size);
 
+        ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).pageList(list).build();
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+  }
 
 }
 

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -36,6 +37,10 @@ public class ApiResponse<T> {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("List ")
     private List<T> list;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("peginateList")
+    private Page<T> pageList;
 
 
 }

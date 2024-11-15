@@ -32,7 +32,7 @@ private LocalDateTime dueDate;
 
 
 
-@Schema(hidden = true)
+ @Schema(hidden = true)
    @ManyToOne()
     @JoinColumn(name = "users_id")
     @JsonBackReference("bookCheckout")

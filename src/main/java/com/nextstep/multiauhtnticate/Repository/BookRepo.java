@@ -2,6 +2,7 @@ package com.nextstep.multiauhtnticate.Repository;
 
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Model.UserModel;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -43,7 +44,7 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 //    total number of items, and whether there’s a next or previous page.
 
     //patial match containing used LIKE operator   pegable domain wala
-    public AddBook findByBookTitleContaining(String bookTitle, Pageable  pageable);
+    public Page<AddBook> findByBookTitleContaining(String bookTitle, Pageable  pageable);
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
     public Optional<AddBook> findByIdExists(@Param("id") String id);
