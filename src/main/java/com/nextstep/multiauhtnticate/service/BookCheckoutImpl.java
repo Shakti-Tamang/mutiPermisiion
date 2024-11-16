@@ -8,6 +8,8 @@ import com.nextstep.multiauhtnticate.Repository.BookRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public class BookCheckoutImpl implements BookCheckoutService {
         bookCheckout.setUsersBook(loggedInUser);
         bookCheckout.setAddBookCheckout(book);
 
+        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
 
         if (loggedInUser.getListOfBookCheckout() == null) {
             loggedInUser.setListOfBookCheckout(new ArrayList<>());
