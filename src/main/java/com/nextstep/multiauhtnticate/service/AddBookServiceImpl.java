@@ -94,7 +94,7 @@ public class AddBookServiceImpl implements AddBookService {
     @Override
     public Page<AddBook> getPeginatedProducts(String searchTerm, int page, int size) {
         Pageable pageable=PageRequest.of(page,size);
-        return  bookRepo.findByBookTitleContaining(searchTerm,pageable);
+        return  bookRepo.findByBookTitleContainingIgnoreCase(searchTerm,pageable);
     }
 
 }
