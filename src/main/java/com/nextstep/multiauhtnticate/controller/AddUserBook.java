@@ -6,7 +6,8 @@ import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
 import io.swagger.v3.oas.annotations.Operation;
-import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -27,14 +28,16 @@ public class AddUserBook {
     @Autowired
     AddBookService addBookService;
 
-    @Autowired
-    ModelMapper modelMapper;
+
+    private Logger logger=LoggerFactory.getLogger(AddUserBook.class);
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addBook")
     @Operation(summary = "Add a new book", description = "Adds a new book to the library")
-    public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBook){
+    public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBookDto){
 
-        AddBook addBook1=modelMapper.map(addBook,AddBook.class);
+        logger.error("error");
+        addBookService.addBook(addBookDto);
 
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
@@ -63,8 +66,8 @@ public class AddUserBook {
     @PatchMapping("/editById")
     @Operation(summary = "Edit By Id",description = "This rout helps to edit by id")
     public ResponseEntity<ApiResponse>editBookById(@RequestParam("id") String id, @RequestBody UpdateBookDto updateBookDto){
-        AddBook addBook=modelMapper.map(updateBookDto,AddBook.class);
-        addBookService.updateBookAdded(id,addBook);
+        addBookService.updateBookAdded(id,updateBookDto);
+
         ApiResponse apiResponse=ApiResponse.builder().message("successfully edited").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 

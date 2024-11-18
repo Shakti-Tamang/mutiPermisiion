@@ -11,6 +11,8 @@ import com.nextstep.multiauhtnticate.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +44,8 @@ public class AuthenticateUser {
     @Autowired
     ModelMapper modelMapper;
 
+    private Logger logger= LoggerFactory.getLogger(AuthenticateUser.class);
+
 //    In Spring Boot, a bean is an object managed by the Spring IoC (Inversion of Control)
 //    container. Beans help organize and inject dependencies in your application, allowing
 //    for easier configuration and reusability of components.
@@ -67,8 +71,15 @@ public class AuthenticateUser {
     @PostMapping("/logInUser")
     @Operation(summary = "Authenticate User",description = "This API is Used To Log in The User")
     public ResponseEntity<ApiResponse>logInUser(@RequestBody LogInDto userModel){
-        System.out.println(userModel.getEmail());
+
+//        best practice than sout
+        logger.error("error"+userModel.getEmail());
+        logger.info("error"+userModel.getEmail());
+        logger.debug("error"+userModel.getEmail());
+
+
         UserModel userModel1=userRepository.findByEmail(userModel.getEmail());
+
 
 if(userModel1 !=null) {
     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(), userModel.getPassword()));

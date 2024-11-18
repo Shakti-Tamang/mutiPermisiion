@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface BookCheckoutRepo extends JpaRepository<BookCheckout,String> {
+public interface BookCheckoutRepo extends JpaRepository<BookCheckout ,String> {
     List<BookCheckout> findByCheckoutDateBeforeAndDueDateFalse(LocalDateTime now);
 }
