@@ -6,6 +6,8 @@ import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
 import io.swagger.v3.oas.annotations.Operation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -26,11 +28,15 @@ public class AddUserBook {
     @Autowired
     AddBookService addBookService;
 
+
+    private Logger logger=LoggerFactory.getLogger(AddUserBook.class);
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addBook")
     @Operation(summary = "Add a new book", description = "Adds a new book to the library")
     public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBookDto){
 
+        logger.error("error");
         addBookService.addBook(addBookDto);
 
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
