@@ -73,8 +73,8 @@ List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveB
     }
 
     @Override
-    public void updateBookAdded(String id, UpdateBookDto addBook) {
-        AddBook addBook1=modelMapper.map(addBook,AddBook.class);
+    public void updateBookAdded(String id, UpdateBookDto updateAddBook) {
+        AddBook addBook1=modelMapper.map(updateAddBook,AddBook.class);
         Optional<AddBook> addBookOptional = bookRepo.findById(id);
 
         if (addBookOptional.isPresent()) {

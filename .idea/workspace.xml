@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookCheckoutRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookCheckoutRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +189,7 @@
       <workItem from="1731669852112" duration="2538000" />
       <workItem from="1731690946480" duration="5542000" />
       <workItem from="1731860694065" duration="1812000" />
-      <workItem from="1731894710001" duration="3143000" />
+      <workItem from="1731894710001" duration="3235000" />
     </task>
     <servers />
   </component>
