@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_3_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/BookRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multifactorauthenticate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/multifactorauthenticate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Repository/ProjectionRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/BookCheckoutImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/BookCheckoutImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/BookCheckoutImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/BookCheckoutImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/ProjectionRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +197,9 @@
       <workItem from="1731460055579" duration="6010000" />
       <workItem from="1731543058808" duration="10821000" />
       <workItem from="1731669852112" duration="2538000" />
-      <workItem from="1731690946480" duration="601000" />
+      <workItem from="1731690946480" duration="5542000" />
+      <workItem from="1731860694065" duration="1812000" />
+      <workItem from="1731894710001" duration="1626000" />
     </task>
     <servers />
   </component>
@@ -241,22 +250,22 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1731144860668" />
-    <state width="1311" height="527" key="GridCell.Tab.0.bottom" timestamp="1731650110912">
+    <state width="1311" height="205" key="GridCell.Tab.0.bottom" timestamp="1731811021015">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="527" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731650110912" />
-    <state width="1311" height="527" key="GridCell.Tab.0.center" timestamp="1731650110912">
+    <state width="1311" height="205" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731811021015" />
+    <state width="1311" height="205" key="GridCell.Tab.0.center" timestamp="1731811021014">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="527" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731650110912" />
-    <state width="1311" height="527" key="GridCell.Tab.0.left" timestamp="1731650110912">
+    <state width="1311" height="205" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731811021014" />
+    <state width="1311" height="205" key="GridCell.Tab.0.left" timestamp="1731811021014">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="527" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731650110912" />
-    <state width="1311" height="527" key="GridCell.Tab.0.right" timestamp="1731650110912">
+    <state width="1311" height="205" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731811021014" />
+    <state width="1311" height="205" key="GridCell.Tab.0.right" timestamp="1731811021015">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="527" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731650110912" />
+    <state width="1311" height="205" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731811021015" />
     <state width="1311" height="527" key="GridCell.Tab.1.bottom" timestamp="1731650110912">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
@@ -289,6 +298,10 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="70" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1731148520997" />
+    <state x="314" y="142" key="com.intellij.ide.util.TipDialog" timestamp="1731891500471">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="314" y="142" key="com.intellij.ide.util.TipDialog/0.0.1366.720@0.0.1366.720" timestamp="1731891500471" />
     <state x="239" y="0" width="887" height="720" key="find.popup" timestamp="1731233569816">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
