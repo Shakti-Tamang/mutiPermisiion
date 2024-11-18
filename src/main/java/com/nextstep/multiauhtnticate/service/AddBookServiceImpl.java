@@ -1,9 +1,12 @@
 package com.nextstep.multiauhtnticate.service;
+import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
+import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.BookRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,27 +25,31 @@ public class AddBookServiceImpl implements AddBookService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    ModelMapper modelMapper;
+
     @Override
-    public void addBook(AddBook addBook) {
+    public void addBook(SaveBookDto addBook) {
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+            AddBook addBook1=modelMapper.map(addBook,AddBook.class);
 
             UserModel loggedInUser = userRepository.findByUsername(authentication.getName());
 
             if (loggedInUser != null) {
-                addBook.setUserToAddBook(loggedInUser);
+                addBook1.setUserToAddBook(loggedInUser);
 
                 if (loggedInUser.getListOfBook() == null) {
                     loggedInUser.setListOfBook(new ArrayList<>());
                 }
-                loggedInUser.getListOfBook().add(addBook);
-                if (addBook.getId() == null || addBook.getId().isEmpty()) {
+                loggedInUser.getListOfBook().add(addBook1);
+                if (addBook1.getId() == null || addBook1.getId().isEmpty()) {
                     String hashId = StringUtills.generateRandomAlphaNumeric(10);
-                    addBook.setId(hashId);
+                    addBook1.setId(hashId);
                 }
                 userRepository.save(loggedInUser);
-                bookRepo.save(addBook);
+                bookRepo.save(addBook1);
 
             }
         }
@@ -58,32 +65,33 @@ public class AddBookServiceImpl implements AddBookService {
     }
 
     @Override
-    public List<AddBook> listOfAddedBook() {
+    public List<SaveBookDto> listOfAddedBook() {
 
         List<AddBook>list=  bookRepo.findAll();
-
-        return list.isEmpty()?new ArrayList<>():list;
+List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveBookDto.class)).toList();
+        return list.isEmpty()?new ArrayList<>():list2;
     }
 
     @Override
-    public void updateBookAdded(String id, AddBook addBook) {
+    public void updateBookAdded(String id, UpdateBookDto addBook) {
+        AddBook addBook1=modelMapper.map(addBook,AddBook.class);
         Optional<AddBook> addBookOptional = bookRepo.findById(id);
 
         if (addBookOptional.isPresent()) {
             AddBook existingBook = addBookOptional.get();
 
             // Only update fields that are non-null in the provided addBook object
-            if (addBook.getNumberOfBook() != null) {
-                existingBook.setNumberOfBook(addBook.getNumberOfBook());
+            if (addBook1.getNumberOfBook() != null) {
+                existingBook.setNumberOfBook(addBook1.getNumberOfBook());
             }
-            if (addBook.getBookCategory() != null) {
-                existingBook.setBookCategory(addBook.getBookCategory());
+            if (addBook1.getBookCategory() != null) {
+                existingBook.setBookCategory(addBook1.getBookCategory());
             }
-            if (addBook.getAvailability() != null) {
-                existingBook.setAvailability(addBook.getAvailability());
+            if (addBook1.getAvailability() != null) {
+                existingBook.setAvailability(addBook1.getAvailability());
             }
-            if (addBook.getBookTitle() != null) {
-                existingBook.setBookTitle(addBook.getBookTitle());
+            if (addBook1.getBookTitle() != null) {
+                existingBook.setBookTitle(addBook1.getBookTitle());
             }
 
             bookRepo.save(existingBook);

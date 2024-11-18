@@ -1,5 +1,7 @@
 package com.nextstep.multiauhtnticate.service;
 
+import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
+import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import org.springframework.data.domain.Page;
 
@@ -8,10 +10,10 @@ import java.util.TreeSet;
 
 
 public interface AddBookService {
-    public void addBook(AddBook addBook);
+    public void addBook(SaveBookDto addBook);
     public void deleteAddedBookById(String id);
-    public List<AddBook>listOfAddedBook();
-    public void updateBookAdded(String id,AddBook addBook);
+    public List<SaveBookDto>listOfAddedBook();
+    public void updateBookAdded(String id, UpdateBookDto addBook);
 //    the Page and Pageable interfaces are part of the Spring Data JPA library, specifically
 //    under the org.springframework.data.domain package.
     //    The Page<Product> return type is
