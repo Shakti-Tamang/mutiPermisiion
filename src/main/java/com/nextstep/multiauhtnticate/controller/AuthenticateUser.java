@@ -10,6 +10,7 @@ import com.nextstep.multiauhtnticate.service.UserDetailInfo;
 import com.nextstep.multiauhtnticate.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,28 +39,26 @@ public class AuthenticateUser {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    ModelMapper modelMapper;
+
 //    In Spring Boot, a bean is an object managed by the Spring IoC (Inversion of Control)
 //    container. Beans help organize and inject dependencies in your application, allowing
 //    for easier configuration and reusability of components.
 
     @PostMapping("/saveUser")
     @Operation(summary = "Register User",description = "This API is used to register The user")
-    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userModel){
-        UserModel userModel1=userRepository.findByUsername(userModel.getUsername());
+    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userDto){
+        UserModel userModel1=userRepository.findByUsername(userDto.getUsername());
         if(userModel1 !=null){
             ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
         }
         // Map UserDto to UserModel manually
-        UserModel userModel2 = new UserModel();
+        UserModel userModel2=modelMapper.map(userDto,UserModel.class);
 
-        userModel2.setUsername(userModel.getUsername());
-        userModel2.setEmail(userModel.getEmail());
-        userModel2.setPassword(userModel.getPassword());
-        userModel2.setRoleName(userModel.getRoleName());
-        userService.saveUser(userModel2);
-
+        userRepository.save(userModel2);
         ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
