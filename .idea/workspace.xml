@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Response/ApiResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +192,7 @@
       <workItem from="1731690946480" duration="5542000" />
       <workItem from="1731860694065" duration="1812000" />
       <workItem from="1731894710001" duration="12194000" />
-      <workItem from="1731989081467" duration="291000" />
+      <workItem from="1731989081467" duration="1247000" />
     </task>
     <servers />
   </component>
@@ -248,38 +243,38 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="413" y="58" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1731144860668" />
-    <state width="1311" height="133" key="GridCell.Tab.0.bottom" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.0.bottom" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.0.center" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.0.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.0.center" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.0.left" timestamp="1731989380706">
+    <state width="1311" height="316" key="GridCell.Tab.0.center/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.0.left" timestamp="1731990670931">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731989380706" />
-    <state width="1311" height="133" key="GridCell.Tab.0.right" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.0.left/0.0.1366.720@0.0.1366.720" timestamp="1731990670931" />
+    <state width="1311" height="316" key="GridCell.Tab.0.right" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.1.bottom" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.0.right/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.1.bottom" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.1.center" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.1.bottom/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.1.center" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.1.left" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.1.center/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.1.left" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
-    <state width="1311" height="133" key="GridCell.Tab.1.right" timestamp="1731989380707">
+    <state width="1311" height="316" key="GridCell.Tab.1.left/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
+    <state width="1311" height="316" key="GridCell.Tab.1.right" timestamp="1731990670932">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1311" height="133" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731989380707" />
+    <state width="1311" height="316" key="GridCell.Tab.1.right/0.0.1366.720@0.0.1366.720" timestamp="1731990670932" />
     <state width="236" height="549" key="HiddenNamespacesPopup" timestamp="1731135291562">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
