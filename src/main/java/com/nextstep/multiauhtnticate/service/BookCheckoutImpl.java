@@ -48,7 +48,11 @@ public class BookCheckoutImpl implements BookCheckoutService {
         bookCheckout.setUsersBook(loggedInUser);
         bookCheckout.setAddBookCheckout(book);
 
+
+
         Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+
+
 
         if (loggedInUser.getListOfBookCheckout() == null) {
             loggedInUser.setListOfBookCheckout(new ArrayList<>());
