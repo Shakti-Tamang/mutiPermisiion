@@ -6,6 +6,7 @@ import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.AddBookService;
 import io.swagger.v3.oas.annotations.Operation;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @Validated
@@ -27,6 +29,8 @@ public class AddUserBook {
 
     @Autowired
     AddBookService addBookService;
+    @Autowired
+    ModelMapper modelMapper;
 
 
     private Logger logger=LoggerFactory.getLogger(AddUserBook.class);
@@ -45,12 +49,23 @@ public class AddUserBook {
 
     @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('LIBRARIAN')")
     @GetMapping("/getAddedBook")
-    @Operation(summary = "Get Added Book",description ="This rout helps to get all added books")
-    public ResponseEntity<ApiResponse>getAllBooks(@RequestParam(value = "pageNumber",defaultValue = "10",required = false)Integer pageNumber,@RequestParam(value = "pageSize",defaultValue = "1",required = false)Integer pageSize,@RequestParam(value = "bookTitle",required = false) String bookTitle){
-        List list=addBookService.listOfAddedBook(pageNumber,pageSize);
-        ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).list( list).build();
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse) ;
+    @Operation(summary = "Get Added Book", description = "This route helps to get all added books")
+    public ResponseEntity<ApiResponse> getAllBooks(
+            @RequestParam(value = "pageNumber", defaultValue = "1", required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize,
+            @RequestParam(value = "bookTitle", required = false) String bookTitle) {
+
+        List<SaveBookDto> list1 = addBookService.listOfAddedBook(pageNumber, pageSize, bookTitle);
+       List<AddBook>list=list1.stream().map((post)->modelMapper.map(post,AddBook.class)).collect(Collectors.toList());
+        ApiResponse apiResponse = ApiResponse.<AddBook>builder()
+                .message("success")
+                .statusCode(HttpStatus.OK.value())
+                .list(list)
+                .build();
+
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
+
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/deleteById")

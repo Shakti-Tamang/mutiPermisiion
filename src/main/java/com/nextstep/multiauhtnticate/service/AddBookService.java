@@ -12,7 +12,7 @@ import java.util.TreeSet;
 public interface AddBookService {
     public void addBook(SaveBookDto addBook);
     public void deleteAddedBookById(String id);
-    public List<SaveBookDto>listOfAddedBook(Integer pageNumber,Integer pageSize);
+    public List<SaveBookDto>listOfAddedBook(Integer pageNumber,Integer pageSize,String Title);
     public void updateBookAdded(String id, UpdateBookDto addBook);
 //    the Page and Pageable interfaces are part of the Spring Data JPA library, specifically
 //    under the org.springframework.data.domain package.

@@ -7,6 +7,7 @@ import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.JwtService;
 import com.nextstep.multiauhtnticate.service.UserDetailInfo;
+import com.nextstep.multiauhtnticate.service.UserImpl;
 import com.nextstep.multiauhtnticate.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -62,7 +63,7 @@ public class AuthenticateUser {
         // Map UserDto to UserModel manually
         UserModel userModel2=modelMapper.map(userDto,UserModel.class);
 
-        userRepository.save(userModel2);
+       userService.saveUser (userModel2);
         ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
