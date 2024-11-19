@@ -47,26 +47,25 @@ public class AddUserBook {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
+
     @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('LIBRARIAN')")
     @GetMapping("/getAddedBook")
     @Operation(summary = "Get Added Book", description = "This route helps to get all added books")
     public ResponseEntity<ApiResponse> getAllBooks(
-            @RequestParam(value = "pageNumber", defaultValue = "1", required = false) Integer pageNumber,
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize,
             @RequestParam(value = "bookTitle", required = false) String bookTitle) {
 
-        List<SaveBookDto> list1 = addBookService.listOfAddedBook(pageNumber, pageSize, bookTitle);
-       List<AddBook>list=list1.stream().map((post)->modelMapper.map(post,AddBook.class)).collect(Collectors.toList());
-        ApiResponse apiResponse = ApiResponse.<AddBook>builder()
+        List<SaveBookDto> books = addBookService.listOfAddedBook(pageNumber, pageSize, bookTitle);
+
+        ApiResponse apiResponse = ApiResponse.<SaveBookDto>builder()
                 .message("success")
                 .statusCode(HttpStatus.OK.value())
-                .list(list)
+                .list(books)
                 .build();
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
-
-
     @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/deleteById")
     @Operation(summary = "Delete BookById",description = "This rout delete addedBook")
