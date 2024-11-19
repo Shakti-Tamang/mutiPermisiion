@@ -47,7 +47,7 @@ public class AddUserBook {
     @GetMapping("/getAddedBook")
     @Operation(summary = "Get Added Book",description ="This rout helps to get all added books")
     public ResponseEntity<ApiResponse>getAllBooks(@RequestParam(value = "pageNumber",defaultValue = "10",required = false)Integer pageNumber,@RequestParam(value = "pageSize",defaultValue = "1",required = false)Integer pageSize,@RequestParam(value = "bookTitle",required = false) String bookTitle){
-        List list=addBookService.listOfAddedBook(pageNumber,pageSize);
+        List list=addBookService.listOfAddedBook(pageNumber,pageSize,bookTitle);
         ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).list( list).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse) ;
     }

@@ -49,7 +49,7 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 
 
     //patial match containing used LIKE operator   pegable domain wala  it ignores case
-//    public Page<AddBook> findByBookTitleContainingIgnoreCase(String bookTitle, Pageable pageable);
+    public Page<AddBook> findByBookTitleContainingIgnoreCase(String bookTitle, Pageable pageable);
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
     public Optional<AddBook> findByIdExists(@Param("id") String id);

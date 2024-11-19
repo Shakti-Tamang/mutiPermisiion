@@ -69,15 +69,22 @@ public class AddBookServiceImpl implements AddBookService {
     }
 
     @Override
-    public List<SaveBookDto> listOfAddedBook(Integer pageNumber,Integer pageSize) {
+    public List<SaveBookDto> listOfAddedBook(Integer pageNumber,Integer pageSize,String Title) {
 
 //   //        total number of data
 //        int pageSize1=10;
 //  //total number of pages
 //        int pageNumber1=5;
         Pageable pageable=PageRequest.of(pageNumber,pageSize);
-        Page<AddBook>list1=this.bookRepo.findAll(pageable);
-       List<AddBook>list=list1.getContent();
+
+        Page<AddBook>list=null;
+    if(Title!=null || !Title.trim().isEmpty()){
+
+        list=bookRepo.findByBookTitleContainingIgnoreCase(Title,pageable);
+    }
+    else {
+        list=bookRepo.findAll(pageable);
+    }
 
         List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveBookDto.class)).toList();
         return list2.isEmpty()?new ArrayList<>():list2;
