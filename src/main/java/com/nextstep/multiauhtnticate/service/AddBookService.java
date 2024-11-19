@@ -12,7 +12,7 @@ import java.util.TreeSet;
 public interface AddBookService {
     public void addBook(SaveBookDto addBook);
     public void deleteAddedBookById(String id);
-    public List<SaveBookDto>listOfAddedBook();
+    public List<SaveBookDto>listOfAddedBook(Integer pageNumber,Integer pageSize);
     public void updateBookAdded(String id, UpdateBookDto addBook);
 //    the Page and Pageable interfaces are part of the Spring Data JPA library, specifically
 //    under the org.springframework.data.domain package.
@@ -23,5 +23,5 @@ public interface AddBookService {
 //        a paginated set of results, often returned by methods using pagination. The Page
 //        interface contains metadata about the page as well as the actual data retrieved.
 //    Here’s an overview of how it works and what it provides:
-    public Page<AddBook>getPeginatedProducts(String searchTerm,int page,int size);
+//    public Page<AddBook>getPeginatedProducts(String searchTerm,int page,int size);
 }
