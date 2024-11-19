@@ -46,8 +46,8 @@ public class AddUserBook {
     @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('LIBRARIAN')")
     @GetMapping("/getAddedBook")
     @Operation(summary = "Get Added Book",description ="This rout helps to get all added books")
-    public ResponseEntity<ApiResponse>getAllBooks(){
-        List list=addBookService.listOfAddedBook();
+    public ResponseEntity<ApiResponse>getAllBooks(@RequestParam(value = "pageNumber",defaultValue = "10",required = false)Integer pageNumber,@RequestParam(value = "pageSize",defaultValue = "1",required = false)Integer pageSize,@RequestParam(value = "bookTitle",required = false) String bookTitle){
+        List list=addBookService.listOfAddedBook(pageNumber,pageSize);
         ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).list( list).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse) ;
     }
@@ -73,14 +73,14 @@ public class AddUserBook {
 
     }
 
-  @GetMapping("/getPegination")
-  @Operation(summary = "get no.of pegination",description = "this rout provide all no.of pegination")
-    public ResponseEntity<ApiResponse>getAllPegination(@RequestParam("bookTitle") String bookTitle,@RequestParam("size") int size,@RequestParam("number") int number){
-   Page<AddBook> list=addBookService.getPeginatedProducts(bookTitle, number,size);
-
-        ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).pageList(list).build();
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-  }
+//  @GetMapping("/getPegination")
+//  @Operation(summary = "get no.of pegination",description = "this rout provide all no.of pegination")
+//    public ResponseEntity<ApiResponse>getAllPegination(@RequestParam("bookTitle") String bookTitle,@RequestParam("size") int size,@RequestParam("number") int number){
+//   Page<AddBook> list=addBookService.getPeginatedProducts(bookTitle, number,size);
+//
+//        ApiResponse apiResponse=ApiResponse.<AddBook>builder().message("success").statusCode(HttpStatus.OK.value()).pageList(list).build();
+//        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+//  }
 
 }
 

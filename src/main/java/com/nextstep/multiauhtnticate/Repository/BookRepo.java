@@ -47,8 +47,9 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 //    the requested page, along with useful information like the total number of pages, the
 //    total number of items, and whether there’s a next or previous page.
 
+
     //patial match containing used LIKE operator   pegable domain wala  it ignores case
-    public Page<AddBook> findByBookTitleContainingIgnoreCase(String bookTitle, Pageable pageable);
+//    public Page<AddBook> findByBookTitleContainingIgnoreCase(String bookTitle, Pageable pageable);
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
     public Optional<AddBook> findByIdExists(@Param("id") String id);

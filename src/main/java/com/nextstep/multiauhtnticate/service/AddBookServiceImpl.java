@@ -69,11 +69,18 @@ public class AddBookServiceImpl implements AddBookService {
     }
 
     @Override
-    public List<SaveBookDto> listOfAddedBook() {
+    public List<SaveBookDto> listOfAddedBook(Integer pageNumber,Integer pageSize) {
 
-        List<AddBook>list=  bookRepo.findAll();
-List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveBookDto.class)).toList();
-        return list.isEmpty()?new ArrayList<>():list2;
+//   //        total number of data
+//        int pageSize1=10;
+//  //total number of pages
+//        int pageNumber1=5;
+        Pageable pageable=PageRequest.of(pageNumber,pageSize);
+        Page<AddBook>list1=this.bookRepo.findAll(pageable);
+       List<AddBook>list=list1.getContent();
+
+        List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveBookDto.class)).toList();
+        return list2.isEmpty()?new ArrayList<>():list2;
     }
 
     @Override
@@ -103,10 +110,10 @@ List<SaveBookDto>list2=list.stream().map((post)->this.modelMapper.map(post,SaveB
     }
 
 
-    @Override
-    public Page<AddBook> getPeginatedProducts(String searchTerm, int page, int size) {
-        Pageable pageable=PageRequest.of(page,size);
-        return  bookRepo.findByBookTitleContainingIgnoreCase(searchTerm,pageable);
-    }
+//    @Override
+//    public Page<AddBook> getPeginatedProducts(String searchTerm, int page, int size) {
+//        Pageable pageable=PageRequest.of(page,size);
+//        return  bookRepo.findByBookTitleContainingIgnoreCase(searchTerm,pageable);
+//    }
 
 }

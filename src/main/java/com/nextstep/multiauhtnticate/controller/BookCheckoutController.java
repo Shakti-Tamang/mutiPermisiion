@@ -5,6 +5,8 @@ import com.nextstep.multiauhtnticate.Response.ApiResponse;
 import com.nextstep.multiauhtnticate.service.BookCheckoutService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,8 @@ public class BookCheckoutController {
 
     @Autowired
     BookCheckoutService bookCheckoutService;
+
+    private Logger logger= LoggerFactory.getLogger(BookCheckoutController.class);
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @Operation(summary = "add record of book checkout",description = "add books checkout rexords")
