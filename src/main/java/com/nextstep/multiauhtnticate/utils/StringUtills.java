@@ -1,6 +1,6 @@
 package com.nextstep.multiauhtnticate.utils;
-
 import java.security.SecureRandom;
+import java.util.Random;
 
 public class StringUtills {
     // Character set to be used for generating random strings
@@ -40,4 +40,5 @@ public class StringUtills {
 
         return generateRandomAlphaNumeric(5);
     }
+
 }
