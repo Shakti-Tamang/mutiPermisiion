@@ -99,7 +99,6 @@ public class BookCheckoutImpl implements BookCheckoutService {
 
     @Override
     public List<BookCheckout> listOfBookCheckout() {
-
 //
 //        Second Approach (Using ModelMapper): Use this approach if you need to transform
 //        the BookCheckout objects into a different class (e.g., BookCheckoutDTO), where

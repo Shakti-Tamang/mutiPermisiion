@@ -74,6 +74,8 @@ public class AddBookServiceImpl implements AddBookService {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
 
         Page<AddBook> listPage;
+
+        //trim is especially used when we need to ignore unnecessary white space:
         if (bookTitle != null && !bookTitle.trim().isEmpty()) {
             listPage = bookRepo.findByBookTitleContainingIgnoreCase(bookTitle, pageable);
         } else {
