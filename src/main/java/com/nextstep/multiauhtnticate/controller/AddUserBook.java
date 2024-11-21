@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @RestController
 @Validated
 @RequestMapping("/app/v3")
+
 @Tag(name = "AddBook", description = "API for adding books") // Use @Tag instead of @Api
 public class AddUserBook {
 

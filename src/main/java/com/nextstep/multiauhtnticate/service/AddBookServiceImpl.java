@@ -8,6 +8,7 @@ import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,7 +21,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class AddBookServiceImpl implements AddBookService {
+public abstract class AddBookServiceImpl implements AddBookService {
 
     @Autowired
     BookRepo bookRepo;
@@ -30,37 +31,50 @@ public class AddBookServiceImpl implements AddBookService {
     @Autowired
     ModelMapper modelMapper;
 
+    @Lookup
+    public abstract AddBook getAddBookInstance(); // Lookup for prototype-scoped bean
+
     @Transactional
     @Override
-    public void addBook(SaveBookDto addBook) {
+    public void addBook(SaveBookDto addBookDto) {
         try {
+            // Get the authentication (logged-in user)
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String username = authentication.getName();
 
-            AddBook addBook1=modelMapper.map(addBook,AddBook.class);
-
-            UserModel loggedInUser = userRepository.findByUsername(authentication.getName());
-
-            if (loggedInUser != null) {
-                addBook1.setUserToAddBook(loggedInUser);
-
-                if (loggedInUser.getListOfBook() == null) {
-                    loggedInUser.setListOfBook(new ArrayList<>());
-                }
-                loggedInUser.getListOfBook().add(addBook1);
-                if (addBook1.getId() == null || addBook1.getId().isEmpty()) {
-                    String hashId = StringUtills.generateRandomAlphaNumeric(10);
-                    addBook1.setId(hashId);
-                }
-                userRepository.save(loggedInUser);
-                bookRepo.save(addBook1);
-            }else{
-                throw new IllegalArgumentException("logged in userf notfound");
-
+            // Fetch the logged-in user from the UserRepository
+            UserModel loggedInUser = userRepository.findByUsername(username);
+            if (loggedInUser == null) {
+                throw new IllegalArgumentException("Logged-in user not found");
             }
-        }
-        catch (Exception ex){
-         ex.printStackTrace();
-         throw  new RuntimeException("failed to add book"+ex.getMessage());
+
+            // Fetch a new AddBook instance from the prototype-scoped bean
+            AddBook addBook = getAddBookInstance();
+
+            // Map the SaveBookDto to AddBook entity
+            modelMapper.map(addBookDto, addBook);
+            addBook.setUserToAddBook(loggedInUser); // Assign the logged-in user to the AddBook entity
+
+            // If the book ID is not provided, generate a random one
+            if (addBook.getId() == null || addBook.getId().isEmpty()) {
+                addBook.setId(StringUtills.generateRandomAlphaNumeric(10));
+            }
+
+            // Ensure the logged-in user's book list is initialized
+            if (loggedInUser.getListOfBook() == null) {
+                loggedInUser.setListOfBook(new ArrayList<>());
+            }
+
+            // Add the new book to the user's list of books
+            loggedInUser.getListOfBook().add(addBook);
+
+            // Save the user and the book
+            userRepository.save(loggedInUser); // Save the user first
+            bookRepo.save(addBook); // Save the AddBook entity
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw new RuntimeException("Failed to add book: " + ex.getMessage());
         }
     }
 
