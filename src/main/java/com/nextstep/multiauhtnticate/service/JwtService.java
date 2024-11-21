@@ -26,6 +26,7 @@ public class JwtService {
     @Value("${jwt.secret}")
     private String secret;
 
+//    spring expression language
     @Value("${jwt.expiration}")
     private long expiration;
 
