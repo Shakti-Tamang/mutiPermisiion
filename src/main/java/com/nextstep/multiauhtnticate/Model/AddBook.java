@@ -13,6 +13,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+
+//jpa
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor

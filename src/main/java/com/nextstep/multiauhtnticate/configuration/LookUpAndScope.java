@@ -1,6 +1,12 @@
 package com.nextstep.multiauhtnticate.configuration;
 
 public class LookUpAndScope {
+//    If you don't use @Scope("prototype") or @Lookup, the same instance of a service is
+//    shared across multiple requests. This means if two users are using the same service,
+//    any changes one user makes could affect the other. For example, if one user sets a
+//        value, it might unexpectedly show up for another user. Using @Scope("prototype")
+//    or @Lookup ensures each user or request gets a fresh instance.
+//
 //    Using prototype scope with @Lookup in the above scenario is beneficial in cases where you need fresh, independent objects for each operation. Let's break this down:
 //
 //    Why Use Prototype Scope in This Scenario?
