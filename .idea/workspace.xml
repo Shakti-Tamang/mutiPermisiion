@@ -2,10 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/ApplicationCoTextSpring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/CheckedAndNotChecked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SpringContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/Model/AddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AddUserBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/multifactorauthenticate.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/LogInDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/SaveBookDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UpdateBookDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/DTO/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/AddBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/BookCheckout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/FineModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role$Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookCheckoutRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/BookRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/FineRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/RoleRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Response/ApiResponse$ApiResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Response/ApiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/Annotations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/OpenAPIConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/configuration/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AddUserBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/BookCheckoutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/FineController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/Health.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/filter/JwtAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/AddBookServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/BookCheckoutImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/BookCheckoutService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/FineService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/FineSevcieImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/utils/StringUtills.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +165,22 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
-  <component name="RunManager" selected="Spring Boot.App">
+  <component name="RunManager" selected="JUnit.All in multifactorauthenticate">
     <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nextstep.multiauhtnticate.App" />
       <module name="multifactorauthenticate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in multifactorauthenticate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="multifactorauthenticate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,6 +192,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in multifactorauthenticate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -193,7 +251,11 @@
       <workItem from="1731860694065" duration="1812000" />
       <workItem from="1731894710001" duration="12194000" />
       <workItem from="1731989081467" duration="24468000" />
-      <workItem from="1732254761318" duration="885000" />
+      <workItem from="1732254761318" duration="1584000" />
+      <workItem from="1732361875052" duration="785000" />
+      <workItem from="1732364254487" duration="552000" />
+      <workItem from="1732421667706" duration="282000" />
+      <workItem from="1732429687136" duration="248000" />
     </task>
     <servers />
   </component>
@@ -308,14 +370,14 @@
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="100" y="0" key="Maven.ArtifactSearchDialog/0.0.1366.720@0.0.1366.720" timestamp="1731036856481" />
-    <state x="70" y="0" key="SettingsEditor" timestamp="1731148520997">
+    <state x="70" y="0" key="SettingsEditor" timestamp="1732362202325">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="70" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1731148520997" />
-    <state x="314" y="142" key="com.intellij.ide.util.TipDialog" timestamp="1731989092398">
+    <state x="70" y="0" key="SettingsEditor/0.0.1366.720@0.0.1366.720" timestamp="1732362202325" />
+    <state x="314" y="142" key="com.intellij.ide.util.TipDialog" timestamp="1732421742544">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="314" y="142" key="com.intellij.ide.util.TipDialog/0.0.1366.720@0.0.1366.720" timestamp="1731989092398" />
+    <state x="314" y="142" key="com.intellij.ide.util.TipDialog/0.0.1366.720@0.0.1366.720" timestamp="1732421742544" />
     <state x="239" y="0" width="887" height="720" key="find.popup" timestamp="1731233569816">
       <screen x="0" y="0" width="1366" height="720" />
     </state>

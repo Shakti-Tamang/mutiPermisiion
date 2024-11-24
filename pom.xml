@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>17</java.version>
-<!--it is best practice not to write real credentials-->
+        <!--it is best practice not to write real credentials-->
         <database.username>YOUR_TEST_USERNAME</database.username>
         <database.password>YOUR_TEST_PASSWORD</database.password>
     </properties>
@@ -29,7 +29,7 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.5.13</version>
         </dependency>
-<!--model mapper-->
+        <!--model mapper-->
 
         <dependency>
             <groupId>org.modelmapper</groupId>
