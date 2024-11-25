@@ -5,3 +5,4 @@ CREATE TABLE fine (
     user_fine_id VARCHAR(255) UNIQUE,
     FOREIGN KEY (user_fine_id) REFERENCES users(id) ON DELETE CASCADE
 );
+

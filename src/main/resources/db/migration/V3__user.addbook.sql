@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS add_book (
     id VARCHAR(255) PRIMARY KEY,
     book_title VARCHAR(255) NOT NULL,
@@ -9,8 +8,3 @@ CREATE TABLE IF NOT EXISTS add_book (
 
     FOREIGN KEY (user_id) REFERENCES users(id)  -- Establishing the relationship with UserModel
 );
-
-
-
-
-
