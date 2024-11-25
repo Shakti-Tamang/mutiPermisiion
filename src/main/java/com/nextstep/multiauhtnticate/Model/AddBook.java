@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Scope;
 import javax.persistence.*;
 import java.util.List;
 
-@Data
 
+@Data
 //jpa
 @Entity
 @NoArgsConstructor
@@ -25,6 +25,7 @@ public class AddBook {
 
     @ApiModelProperty(hidden = true)
     @Schema(hidden = true)
+
     @Id
 
     private String id;
