@@ -39,7 +39,7 @@ private LocalDateTime dueDate;
     private UserModel usersBook;
 
 @Schema(hidden = true)
- @ManyToOne()
+   @ManyToOne()
     @JoinColumn(name="add_book_id")
     @JsonBackReference("bookaddedCheckout")
     private AddBook addBookCheckout;

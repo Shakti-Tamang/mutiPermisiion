@@ -1,6 +1,7 @@
 package com.nextstep.multiauhtnticate.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -58,5 +59,11 @@ public class UserModel {
     @OneToOne(cascade = CascadeType.ALL)
     @JsonManagedReference("fineUser")
     private FineModel fineUser;
+
+    @Schema(hidden = true)
+    @Column(nullable = false)
+    @ManyToMany(mappedBy = "usersCourse",cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("courseList")
+    private List<Courses>courseList;
 
 }
