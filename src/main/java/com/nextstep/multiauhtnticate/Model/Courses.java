@@ -58,7 +58,7 @@ public class Courses {
     @Schema(hidden = true)
     @Column(nullable = false)
     @ManyToMany()
-    @JoinTable(name = "course",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @JoinTable(name = "allcourse",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "course_id"))
     @JsonIgnoreProperties("courseList")
     private List<UserModel>usersCourse;
 

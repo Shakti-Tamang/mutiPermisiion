@@ -10,4 +10,3 @@ INSERT INTO roles (id, role_name) VALUES
 ('3', 'TEACHER'),
 ('4', 'LIBRARIAN')
 ON CONFLICT (id) DO NOTHING;  -- Avoid duplicate entries
-
