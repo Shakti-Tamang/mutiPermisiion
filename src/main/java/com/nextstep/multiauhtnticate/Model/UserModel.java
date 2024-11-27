@@ -44,6 +44,9 @@ public class UserModel {
     // New field for role name as String (this will be sent from client)
     private String roleName;
 
+    @Column(nullable = true)
+    private String faculty;
+
 //    @ApiModelProperty(hidden = true)
     @Schema(hidden = true)
     @OneToMany(mappedBy = "userToAddBook",cascade = CascadeType.ALL)
@@ -62,8 +65,9 @@ public class UserModel {
 
     @Schema(hidden = true)
     @Column(nullable = false)
-    @ManyToMany(mappedBy = "usersCourse",cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("courseList")
+    @ManyToMany(mappedBy = "usersCourse", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonIgnoreProperties("usersCourse")
     private List<Courses>courseList;
 
 }
+

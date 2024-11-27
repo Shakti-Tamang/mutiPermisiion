@@ -4,6 +4,12 @@ import com.nextstep.multiauhtnticate.Model.Courses;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CourseRepo extends JpaRepository<Courses,String> {
+
+//    you cannot create the same cutom method which is already provided by jpa
+//    public List<Courses> findAllById(List<String>id);
+//    this can cuase error native
 }
