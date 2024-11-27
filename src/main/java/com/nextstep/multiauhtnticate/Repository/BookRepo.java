@@ -1,6 +1,7 @@
 package com.nextstep.multiauhtnticate.Repository;
 
 import com.nextstep.multiauhtnticate.Model.AddBook;
+import com.nextstep.multiauhtnticate.Model.Courses;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -53,4 +54,6 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
     public Optional<AddBook> findByIdExists(@Param("id") String id);
+
+
 }

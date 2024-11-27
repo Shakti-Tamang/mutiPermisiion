@@ -23,6 +23,8 @@ public class UserDto {
     @Column(nullable = false)
     private String password;
 
+    private String faculty;
+
     // New field for role name as String (this will be sent from client)
     private String roleName;
 

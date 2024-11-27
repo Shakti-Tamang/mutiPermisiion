@@ -18,9 +18,11 @@ import java.util.List;
 @Entity
 @Table(name = "courses")
 public class Courses {
+    @Schema(hidden = true)
     @Id
+    private String id;
 
-    @Column(nullable = false)
+
     @Schema(hidden = true)
     private String courseId;
 
@@ -54,13 +56,14 @@ public class Courses {
 //    relationships creates an endless loop. This can cause problems, especially
 //    during JSON serialization, as the serialization process keeps traversing
 //    the circular structure indefinitely.
-
-    @Schema(hidden = true)
-    @Column(nullable = false)
-    @ManyToMany()
-    @JoinTable(name = "allcourse",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "course_id"))
-    @JsonIgnoreProperties("courseList")
-    private List<UserModel>usersCourse;
+@ManyToMany
+@JoinTable(
+        name = "user_courses",
+        joinColumns = @JoinColumn(name = "course_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id")
+)
+@JsonIgnoreProperties("courseList")
+private List<UserModel> usersCourse;
 
 
 
