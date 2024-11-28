@@ -4,10 +4,12 @@ import com.nextstep.multiauhtnticate.Model.Courses;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.CourseRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
+import com.nextstep.multiauhtnticate.utils.StringUtills;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,16 +23,39 @@ public class AddCourseImpl implements  AddCourse {
     CourseRepo courseRepo;
 
     @Transactional
-    @Override
     public void saveCourse(Courses courses, String faculty) {
-List<UserModel>list=userRepository.findAllByFaculty(faculty);
+        try {
+            // Fetch all users belonging to the given faculty
+            List<UserModel> userList = userRepository.findAllByFaculty(faculty);
 
- for(UserModel userModel:list){
-    userModel.getCourseList().add(courses);
-   }
-courseRepo.save(courses);
+            // Generate a unique course ID
+            String courseId = StringUtills.generateRandomAlphaNumeric();
+            courses.setCourseId(courseId);
 
+            // Initialize usersCourse list if null
+            if (courses.getUsersCourse() == null) {
+                courses.setUsersCourse(new ArrayList<>());
+            }
 
+            // Link the users to the course and establish the bi-directional relationship
+            for (UserModel user : userList) {
+                // Add users to the course's list
+                courses.getUsersCourse().add(user);
 
+                // Add the course to each user's course list
+                user.getCourseList().add(courses);
+
+                // Save the updated user to ensure the relationship is persisted
+                userRepository.save(user);
+            }
+
+            // Save the course after establishing the relationship
+            courseRepo.save(courses);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.err.println("Error occurred while saving course: " + ex.getMessage());
+        }
     }
+
 }

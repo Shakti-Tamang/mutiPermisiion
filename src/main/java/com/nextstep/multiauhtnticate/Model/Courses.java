@@ -10,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -18,12 +19,10 @@ import java.util.List;
 @Entity
 @Table(name = "courses")
 public class Courses {
-    @Schema(hidden = true)
+
     @Id
-    private String id;
-
-
     @Schema(hidden = true)
+
     private String courseId;
 
     @Column(nullable = false)
@@ -56,14 +55,17 @@ public class Courses {
 //    relationships creates an endless loop. This can cause problems, especially
 //    during JSON serialization, as the serialization process keeps traversing
 //    the circular structure indefinitely.
-@ManyToMany
-@JoinTable(
-        name = "user_courses",
-        joinColumns = @JoinColumn(name = "course_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
-)
-@JsonIgnoreProperties("courseList")
-private List<UserModel> usersCourse;
+
+    @Schema(hidden = true)
+    @ManyToMany
+    @JoinTable(
+            name = "user_courses",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    @JsonIgnoreProperties("courseList")
+    private List<UserModel> usersCourse = new ArrayList<>();
+
 
 
 

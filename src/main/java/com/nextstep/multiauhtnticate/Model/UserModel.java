@@ -3,7 +3,6 @@ package com.nextstep.multiauhtnticate.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -64,10 +64,10 @@ public class UserModel {
     private FineModel fineUser;
 
     @Schema(hidden = true)
-    @Column(nullable = false)
     @ManyToMany(mappedBy = "usersCourse", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnoreProperties("usersCourse")
-    private List<Courses>courseList;
+    private List<Courses> courseList = new ArrayList<>();
+
 
 }
 
