@@ -26,6 +26,7 @@ public class UserImpl implements UserService {
 
     @Override
     public void saveUser(UserModel userModel1) {
+
 try {
     Role role = roleRepo.findByRoleName(Role.Roles.valueOf(userModel1.getRoleName()));
     if (role == null) {
