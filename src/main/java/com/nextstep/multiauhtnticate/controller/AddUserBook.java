@@ -1,5 +1,6 @@
 package com.nextstep.multiauhtnticate.controller;
 
+import com.nextstep.multiauhtnticate.DTO.ProjectionBookDto;
 import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
 import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 
@@ -46,6 +47,16 @@ public class AddUserBook {
         addBookService.addBook(addBookDto);
 
         ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/getProjected")
+    @Operation(summary = "get limited fields",description = "api to get limited field")
+public ResponseEntity<ApiResponse>getLimted(){
+        List<ProjectionBookDto>list=addBookService.getProductWithThreefield();
+
+        ApiResponse apiResponse=ApiResponse.<ProjectionBookDto>builder().message("message").statusCode(HttpStatus.OK.value()).list(list).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 

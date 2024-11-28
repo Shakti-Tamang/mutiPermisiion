@@ -1,5 +1,6 @@
 package com.nextstep.multiauhtnticate.service;
 
+import com.nextstep.multiauhtnticate.DTO.ProjectionBookDto;
 import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
 import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
@@ -24,4 +25,6 @@ public interface AddBookService {
 //        interface contains metadata about the page as well as the actual data retrieved.
 //    Here’s an overview of how it works and what it provides:
 //    public Page<AddBook>getPeginatedProducts(String searchTerm,int page,int size);
+
+    List<ProjectionBookDto>  getProductWithThreefield();
 }

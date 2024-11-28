@@ -3,6 +3,7 @@ package com.nextstep.multiauhtnticate.Repository;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Model.Courses;
 import com.nextstep.multiauhtnticate.Model.UserModel;
+import com.nextstep.multiauhtnticate.Projection.AddBookProjection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -54,6 +55,10 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 
     @Query("SELECT b FROM AddBook b WHERE b.id = :id")
     public Optional<AddBook> findByIdExists(@Param("id") String id);
+
+
+    @Query(value = "select book_category,book_title,number_of_book from add_book",nativeQuery = true)
+    List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 
 }

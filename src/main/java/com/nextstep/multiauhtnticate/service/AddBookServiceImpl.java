@@ -1,8 +1,10 @@
 package com.nextstep.multiauhtnticate.service;
+import com.nextstep.multiauhtnticate.DTO.ProjectionBookDto;
 import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
 import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Model.UserModel;
+import com.nextstep.multiauhtnticate.Projection.AddBookProjection;
 import com.nextstep.multiauhtnticate.Repository.BookRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
@@ -33,6 +35,8 @@ public  class AddBookServiceImpl implements AddBookService {
 
     @Autowired
     ModelMapper modelMapper;
+
+
 
     private Logger logger= LoggerFactory.getLogger(AddBookServiceImpl.class);
 
@@ -128,6 +132,22 @@ public  class AddBookServiceImpl implements AddBookService {
 
             bookRepo.save(existingBook);
         }
+    }
+
+    @Override
+    public List<ProjectionBookDto> getProductWithThreefield() {
+
+        List<AddBookProjection>list=bookRepo.getAddBookWithRequiredAttribute();
+
+    List<ProjectionBookDto>list1=new ArrayList<>();
+
+    for(AddBookProjection addBookProjection:list){
+
+        list1.add(   new ProjectionBookDto(addBookProjection.getBookCategory(),addBookProjection.getBookTitle(),addBookProjection.getNumberOfBook()));
+
+    }
+return  list1;
+
     }
 
 
