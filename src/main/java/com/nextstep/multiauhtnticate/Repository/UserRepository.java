@@ -23,4 +23,6 @@ public interface UserRepository extends JpaRepository<UserModel,String> {
     List<UserModel> findAllByFaculty(String faculty);
 
 
+
+
 }
