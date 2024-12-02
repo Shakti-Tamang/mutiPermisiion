@@ -53,7 +53,7 @@ public class AuthenticateUser {
 
     @PostMapping("/saveUser")
     @Operation(summary = "Register User",description = "This API is used to register The user")
-    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userDto){
+    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userDto,@RequestParam("courseCode") String courseCode){
         UserModel userModel1=userRepository.findByUsername(userDto.getUsername());
         if(userModel1 !=null){
             ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
@@ -63,7 +63,7 @@ public class AuthenticateUser {
         // Map UserDto to UserModel manually
         UserModel userModel2=modelMapper.map(userDto,UserModel.class);
 
-       userService.saveUser (userModel2);
+       userService.saveUser (userModel2,courseCode);
         ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

@@ -22,6 +22,7 @@ public interface CourseRepo extends JpaRepository<Courses,String> {
     @Query(value = "SELECT c.* FROM courses c JOIN user_courses uc ON c.course_id = uc.course_id JOIN users u ON uc.user_id = u.id WHERE u.faculty = :faculty", nativeQuery = true)
     Courses findCourseByUserFaculty(String faculty);
 
+    List<Courses> findAllByCourseCode(String code);
 
 //    you cannot create the same cutom method which is already provided by jpa
 //    public List<Courses> findAllById(List<String>id);

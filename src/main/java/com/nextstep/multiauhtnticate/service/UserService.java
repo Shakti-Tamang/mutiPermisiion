@@ -4,5 +4,5 @@ import com.nextstep.multiauhtnticate.Model.UserModel;
 
 
 public interface UserService {
-    public void saveUser(UserModel userModel);
+    public void saveUser(UserModel userModel,String course);
 }

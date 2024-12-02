@@ -26,14 +26,14 @@ public class BookCheckout {
 @Schema(required = true)
 private LocalDateTime checkoutDate;
 
-@Column(nullable = false)
-@Schema(required = true)
-private LocalDateTime dueDate;
+ @Column(nullable = false)
+ @Schema(required = true)
+ private LocalDateTime dueDate;
 
 
 
- @Schema(hidden = true)
-   @ManyToOne()
+    @Schema(hidden = true)
+    @ManyToOne()
     @JoinColumn(name = "users_id")
     @JsonBackReference("bookCheckout")
     private UserModel usersBook;
