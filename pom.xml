@@ -125,6 +125,14 @@
             <version>0.11.5</version>
         </dependency>
 
+<!--        csv-->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.8</version>
+        </dependency>
+
+
         <!-- Firebase dependency -->
         <dependency>
             <groupId>com.google.firebase</groupId>
