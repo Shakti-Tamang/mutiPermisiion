@@ -26,6 +26,10 @@ public class SecurityConfig {
     public SecurityConfig(JwtAuthFilter authFilter) {
         this.authFilter = authFilter;
     }
+//    @Component makes a class a Spring bean and registers it automatically for dependency injection.
+////    @Bean allows you to define a bean with specific configurations and settings within a configuration class.
+//
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
