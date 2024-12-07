@@ -85,6 +85,7 @@ public class AuthenticateUser {
 if(userModel1 !=null) {
     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(), userModel.getPassword()));
     if (authentication.isAuthenticated()) {
+
         UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
         String token = jwtService.GenerateToken(userDetails);
         String refrenceToken = jwtService.GenerateToken(userDetails);
