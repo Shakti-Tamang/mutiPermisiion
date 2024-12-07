@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc753a6d-579d-4ff9-bf59-75954a5f1c4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SpecifyProfileForDevlopment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/configuration/SingltonClassInJava.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nextstep/multiauhtnticate/controller/AuthenticateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/CourseRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/Repository/CourseRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/controller/AuthenticateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nextstep/multiauhtnticate/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +182,7 @@
       <workItem from="1732515850158" duration="45225000" />
       <workItem from="1733385267531" duration="5372000" />
       <workItem from="1733475084734" duration="1291000" />
-      <workItem from="1733482653986" duration="1031000" />
+      <workItem from="1733482653986" duration="1702000" />
     </task>
     <servers />
   </component>
