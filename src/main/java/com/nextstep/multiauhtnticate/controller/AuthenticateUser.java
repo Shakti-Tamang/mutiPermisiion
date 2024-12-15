@@ -30,80 +30,87 @@ import javax.validation.Valid;
 @RequestMapping("/app/v1")
 @Tag(name = "Authenticate User", description = "Registaring authenticated user") // Use @Tag instead of @Api
 public class AuthenticateUser {
-//json to dart and dart to json serializer and deserializer
-    @Autowired
-    UserService userService;
 
-    @Autowired
-    AuthenticationManager authenticationManager;
-    @Autowired
-    JwtService jwtService;
+    //json to dart and dart to json serializer and deserializer
+    // Constructor injection
 
-    @Autowired
-    UserRepository userRepository;
+    private final UserService userService;
+    private final AuthenticationManager authenticationManager;
+    private final JwtService jwtService;
+    private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
+    private final Logger logger;
 
-    @Autowired
-    ModelMapper modelMapper;
-
-    private Logger logger= LoggerFactory.getLogger(AuthenticateUser.class);
+    // Constructor injection
+    public AuthenticateUser(UserService userService,
+                            AuthenticationManager authenticationManager,
+                            JwtService jwtService,
+                            UserRepository userRepository,
+                            ModelMapper modelMapper) {
+        this.userService = userService;
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
+        this.userRepository = userRepository;
+        this.modelMapper = modelMapper;
+        this.logger = LoggerFactory.getLogger(AuthenticateUser.class);
+    }
 
 //    In Spring Boot, a bean is an object managed by the Spring IoC (Inversion of Control)
 //    container. Beans help organize and inject dependencies in your application, allowing
 //    for easier configuration and reusability of components.
 
     @PostMapping("/saveUser")
-    @Operation(summary = "Register User",description = "This API is used to register The user")
-    public ResponseEntity<ApiResponse>saveUser(@Valid @RequestBody UserDto userDto,@RequestParam("courseCode") String courseCode){
-        UserModel userModel1=userRepository.findByUsername(userDto.getUsername());
-        if(userModel1 !=null){
+    @Operation(summary = "Register User", description = "This API is used to register The user")
+    public ResponseEntity<ApiResponse> saveUser(@Valid @RequestBody UserDto userDto, @RequestParam("courseCode") String courseCode) {
+        UserModel userModel1 = userRepository.findByUsername(userDto.getUsername());
+        if (userModel1 != null) {
             ApiResponse apiResponse = ApiResponse.builder().message("user alreday there").statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value()).build();
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiResponse);
         }
         // Map UserDto to UserModel manually
-        UserModel userModel2=modelMapper.map(userDto,UserModel.class);
+        UserModel userModel2 = modelMapper.map(userDto, UserModel.class);
 
-       userService.saveUser (userModel2,courseCode);
+        userService.saveUser(userModel2, courseCode);
         ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).build();
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     @PostMapping("/logInUser")
-    @Operation(summary = "Authenticate User",description = "This API is Used To Log in The User")
-    public ResponseEntity<ApiResponse>logInUser(@RequestBody LogInDto userModel){
+    @Operation(summary = "Authenticate User", description = "This API is Used To Log in The User")
+    public ResponseEntity<ApiResponse> logInUser(@RequestBody LogInDto userModel) {
 
 //        best practice than sout
-        logger.error("error"+userModel.getEmail());
-        logger.info("error"+userModel.getEmail());
-        logger.debug("error"+userModel.getEmail());
+        logger.error("error" + userModel.getEmail());
+        logger.info("error" + userModel.getEmail());
+        logger.debug("error" + userModel.getEmail());
 
 
-        UserModel userModel1=userRepository.findByEmail(userModel.getEmail());
+        UserModel userModel1 = userRepository.findByEmail(userModel.getEmail());
 
 
-if(userModel1 !=null) {
-    Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(), userModel.getPassword()));
-    if (authentication.isAuthenticated()) {
+        if (userModel1 != null) {
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userModel1.getUsername(), userModel.getPassword()));
+            if (authentication.isAuthenticated()) {
 
-        UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
-        String token = jwtService.GenerateToken(userDetails);
-        String refrenceToken = jwtService.GenerateToken(userDetails);
-        ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).Token(token).refreshToken(refrenceToken).build();
+                UserDetailInfo userDetails = (UserDetailInfo) authentication.getPrincipal();
+                String token = jwtService.GenerateToken(userDetails);
+                String refrenceToken = jwtService.GenerateToken(userDetails);
+                ApiResponse apiResponse = ApiResponse.builder().message("success").statusCode(HttpStatus.OK.value()).Token(token).refreshToken(refrenceToken).build();
 
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-    } else {
-        ApiResponse apiResponse = ApiResponse.builder().message("user not found").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResponse);
+                return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+            } else {
+                ApiResponse apiResponse = ApiResponse.builder().message("user not found").statusCode(HttpStatus.UNAUTHORIZED.value()).build();
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiResponse);
 
-    }
-}
-else{
+            }
+        } else {
 
-    ApiResponse apiResponse = ApiResponse.builder().message("unautorized access").statusCode(HttpStatus.NOT_FOUND.value()).build();
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
+            ApiResponse apiResponse = ApiResponse.builder().message("unautorized access").statusCode(HttpStatus.NOT_FOUND.value()).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
 
-}
+        }
 
     }
 

@@ -5,6 +5,4 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     role_name VARCHAR(255),
     user_role VARCHAR(255)
-
 );
-

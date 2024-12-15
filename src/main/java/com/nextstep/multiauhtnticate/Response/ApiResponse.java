@@ -17,7 +17,7 @@ import java.util.List;
 public class ApiResponse<T> {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("message")
-    private   String message;
+    private  String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("status code ")

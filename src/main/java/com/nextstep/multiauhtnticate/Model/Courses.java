@@ -42,13 +42,13 @@ public class Courses {
     @Schema(required = true)
     @NotNull(message = "Must not be null")
     @NotEmpty(message = "Must not be empty")
-    private  String coursediscription;
+    private String coursediscription;
 
     @Column(nullable = false)
     @Schema(required = true)
     @NotEmpty(message = "Must not be empty")
     @NotNull(message = "Must not be null")
-    private  String modeOfDelivery;
+    private String modeOfDelivery;
 
 //    A cyclic reference (also called a circular reference) occurs when two or
 //    more objects reference each other in such a way that navigating their
@@ -65,10 +65,6 @@ public class Courses {
     )
     @JsonIgnoreProperties("courseList")
     private List<UserModel> usersCourse = new ArrayList<>();
-
-
-
-
 
 
 }

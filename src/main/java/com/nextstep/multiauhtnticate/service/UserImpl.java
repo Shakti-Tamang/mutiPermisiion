@@ -10,47 +10,60 @@ import com.nextstep.multiauhtnticate.Repository.RoleRepo;
 import com.nextstep.multiauhtnticate.Repository.UserRepository;
 import com.nextstep.multiauhtnticate.utils.StringUtills;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 @Service
 public class UserImpl implements UserService {
-    @Autowired
-    UserRepository userRepository;
+
+    //field and setteer injection
+//    @Autowired
+//    UserRepository userRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
-    @Autowired
-    RoleRepo roleRepo;
+//    @Autowired
+//    RoleRepo roleRepo;
+//
+//    @Autowired
+//    CourseRepo courseRepo;
 
-    @Autowired
-    CourseRepo courseRepo;
+    private final UserRepository userRepository;
+    private final RoleRepo roleRepo;
+    private final CourseRepo courseRepo;
 
+    public UserImpl( UserRepository userRepository, RoleRepo roleRepo, CourseRepo courseRepo) {
+        this.userRepository = userRepository;
+        this.roleRepo = roleRepo;
+        this.courseRepo = courseRepo;
+    }
+
+    @Transactional
     @Override
-    public void saveUser(UserModel userModel1,String course) {
+    public void saveUser(UserModel userModel1, String courseCode) {
         try {
-            List<Courses> listOfCourse = new ArrayList<>();
+            // Fetching the course from the database
+            List<Courses> listOfCourse = courseRepo.findByCourseCode(courseCode);
 
-            // Fetch courses only if the course parameter is provided
-            if (course != null && !course.trim().isEmpty()) {
-                listOfCourse = courseRepo.findAllByCourseCode(course);
-            }
-
+            // Initialize courseList if null
             if (userModel1.getCourseList() == null) {
                 userModel1.setCourseList(new ArrayList<>());
             }
 
+            // Add courses to the user's courseList
             for (Courses courses : listOfCourse) {
                 userModel1.getCourseList().add(courses);
-                courses.getUsersCourse().add(userModel1);
+                courses.getUsersCourse().add(userModel1);  // Ensure courses know about the user
             }
 
-            // Handle role logic
+            // Set role if necessary
             Role role = roleRepo.findByRoleName(Role.Roles.valueOf(userModel1.getRoleName()));
             if (role == null) {
                 role = new Role();
@@ -61,19 +74,15 @@ public class UserImpl implements UserService {
             }
             userModel1.setUser_role(role);
 
-            // Assign unique ID if it doesn't exist
+            // Generate unique ID if missing
             if (userModel1.getId() == null || userModel1.getId().isEmpty()) {
                 String hashId = StringUtills.generateRandomAlphaNumeric(10);
                 userModel1.setId(hashId);
             }
 
-            // Encode the password
             userModel1.setPassword(passwordEncoder.encode(userModel1.getPassword()));
 
-            // Save courses and user
-            for (Courses courses : listOfCourse) {
-                courseRepo.save(courses);
-            }
+            // Save the user model and related entities
             userRepository.save(userModel1);
 
         } catch (Exception ex) {

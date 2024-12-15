@@ -1,5 +1,6 @@
 package com.nextstep.multiauhtnticate.Repository;
 
+import com.nextstep.multiauhtnticate.DTO.ProjectionBookDto;
 import com.nextstep.multiauhtnticate.Model.AddBook;
 import com.nextstep.multiauhtnticate.Model.Courses;
 import com.nextstep.multiauhtnticate.Model.UserModel;
@@ -57,8 +58,19 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
     public Optional<AddBook> findByIdExists(@Param("id") String id);
 
 
-    @Query(value = "select book_category,book_title,number_of_book from add_book",nativeQuery = true)
-    List<AddBookProjection> getAddBookWithRequiredAttribute();
+//    inteface approach for jpql:
+//@Query("SELECT b.bookTitle AS bookTitle, b.bookCategory AS bookCategory, b.numberOfBook AS numberOfBook FROM AddBook b")
+//List<AddBookProjection> getAddBookWithRequiredAttribute();
+
+//    native
+//    @Query(value = "SELECT book_title AS bookTitle, book_category AS bookCategory, number_of_book AS numberOfBook FROM add_book", nativeQuery = true)
+//    List<AddBookProjection> getAddBookWithRequiredAttribute();
+
+
+//    By suing jpql
+    @Query("SELECT new com.nextstep.multiauhtnticate.DTO.ProjectionBookDto(b.bookTitle, b.bookCategory, b.numberOfBook) FROM AddBook b")
+    List<ProjectionBookDto> getAddBookWithRequiredAttribute();
+
 
 
 }

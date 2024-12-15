@@ -27,8 +27,8 @@ public class UserModel {
     @Column(nullable = false)
     private String username;
 
-//    @ApiModelProperty(hidden = true)
-@Schema(hidden = true)
+    //    @ApiModelProperty(hidden = true)
+    @Schema(hidden = true)
     @ManyToOne()
     @JoinColumn(name = "user_role")
     @JsonBackReference("users_role")
@@ -47,16 +47,16 @@ public class UserModel {
     @Column(nullable = true)
     private String faculty;
 
-//    @ApiModelProperty(hidden = true)
+    //    @ApiModelProperty(hidden = true)
     @Schema(hidden = true)
-    @OneToMany(mappedBy = "userToAddBook",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userToAddBook", cascade = CascadeType.ALL)
     @JsonManagedReference("userAddBook")
     private List<AddBook> listOfBook;
 
     @Schema(hidden = true)
-    @OneToMany(mappedBy = "usersBook",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usersBook", cascade = CascadeType.ALL)
     @JsonManagedReference("bookCheckout")
-    private List<BookCheckout>listOfBookCheckout;
+    private List<BookCheckout> listOfBookCheckout;
 
     @Schema(hidden = true)
     @OneToOne(cascade = CascadeType.ALL)

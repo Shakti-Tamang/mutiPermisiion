@@ -23,7 +23,7 @@ public class FineModel {
     //small int
     @Column(nullable = false)
     @Schema(required = true)
-    private  Short fine;
+    private Short fine;
 
     @OneToOne()
     @Schema(hidden = true)
