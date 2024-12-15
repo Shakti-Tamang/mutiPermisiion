@@ -16,20 +16,19 @@ import java.time.LocalDateTime;
 @Table(name = "book_checkout")
 public class BookCheckout {
 
-@Schema(hidden = true)
+    @Schema(hidden = true)
     @Id
 
     private String id;
 
 
-@Column(nullable = false)
-@Schema(required = true)
-private LocalDateTime checkoutDate;
+    @Column(nullable = false)
+    @Schema(required = true)
+    private LocalDateTime checkoutDate;
 
- @Column(nullable = false)
- @Schema(required = true)
- private LocalDateTime dueDate;
-
+    @Column(nullable = false)
+    @Schema(required = true)
+    private LocalDateTime dueDate;
 
 
     @Schema(hidden = true)
@@ -38,9 +37,9 @@ private LocalDateTime checkoutDate;
     @JsonBackReference("bookCheckout")
     private UserModel usersBook;
 
-@Schema(hidden = true)
-   @ManyToOne()
-    @JoinColumn(name="add_book_id")
+    @Schema(hidden = true)
+    @ManyToOne()
+    @JoinColumn(name = "add_book_id")
     @JsonBackReference("bookaddedCheckout")
     private AddBook addBookCheckout;
 

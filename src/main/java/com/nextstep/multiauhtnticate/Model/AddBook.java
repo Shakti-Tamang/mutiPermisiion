@@ -18,8 +18,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Scope("prototype")
-@Table(name = "add_book",indexes = {
+//@Scope("prototype")
+@Table(name = "add_book", indexes = {
         @Index(name = "index_add_book_id", columnList = "id")})
 public class AddBook {
 
@@ -38,7 +38,7 @@ public class AddBook {
     @Schema(required = true)
     private String bookCategory;
 
-//its object so can be nullable
+    //its object so can be nullable
     @Column(nullable = true) // nullable=true allows the field to be null
     @Schema(required = true)
     private Integer numberOfBook; // Updated field name
@@ -59,10 +59,9 @@ public class AddBook {
     private UserModel userToAddBook;
 
     @Schema(hidden = true)
-    @OneToMany(mappedBy = "addBookCheckout",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "addBookCheckout", cascade = CascadeType.ALL)
     @JsonManagedReference("bookaddedCheckout")
-    private List<BookCheckout>listOfCheckoutBook;
-
+    private List<BookCheckout> listOfCheckoutBook;
 
 
 }

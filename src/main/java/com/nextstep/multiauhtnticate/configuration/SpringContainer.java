@@ -7,5 +7,4 @@ public class SpringContainer {
 //    container is automatically initialized when the application starts, loading beans from the
 //    application context. Developers use it to manage dependencies and business logic by annotating
 //    classes with Spring annotations like @Component, @Service, or @Repository.
-
 }

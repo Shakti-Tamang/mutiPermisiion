@@ -19,6 +19,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
+
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,33 +31,54 @@ import java.util.stream.Collectors;
 @Tag(name = "AddBook", description = "API for adding books") // Use @Tag instead of @Api
 public class AddUserBook {
 
-    @Autowired
-    AddBookService addBookService;
-    @Autowired
-    ModelMapper modelMapper;
+//    filed injection
+//
+//    @Autowired
+//    AddBookService addBookService;
+//    @Autowired
+//    ModelMapper modelMapper;
+//
+//
+//    private Logger logger = LoggerFactory.getLogger(AddUserBook.class);
 
 
-    private Logger logger=LoggerFactory.getLogger(AddUserBook.class);
+//    contructor njection
+    private final AddBookService addBookService;
+
+    private final ModelMapper modelMapper;
+    private final Logger logger;
+
+    public AddUserBook(AddBookService addBookService,ModelMapper modelMapper){
+
+        this.addBookService=addBookService;
+        this.modelMapper=modelMapper;
+        this.logger=LoggerFactory.getLogger(AddUserBook.class);
+
+    }
+//
+
+
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addBook")
     @Operation(summary = "Add a new book", description = "Adds a new book to the library")
-    public ResponseEntity<ApiResponse>addBook(@Valid @RequestBody SaveBookDto addBookDto){
+    public ResponseEntity<ApiResponse> addBook(@Valid @RequestBody SaveBookDto addBookDto) {
+//
+//        logger.error("error");
 
-        logger.error("error");
         addBookService.addBook(addBookDto);
 
-        ApiResponse apiResponse=ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
+        ApiResponse apiResponse = ApiResponse.builder().message("SuccessFullyAdded Book").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/getProjected")
-    @Operation(summary = "get limited fields",description = "api to get limited field")
-public ResponseEntity<ApiResponse>getLimted(){
-        List<ProjectionBookDto>list=addBookService.getProductWithThreefield();
+    @Operation(summary = "get limited fields", description = "api to get limited field")
+    public ResponseEntity<ApiResponse> getLimted() {
+        List<ProjectionBookDto> list = addBookService.getProductWithThreefield();
 
-        ApiResponse apiResponse=ApiResponse.<ProjectionBookDto>builder().message("message").statusCode(HttpStatus.OK.value()).list(list).build();
+        ApiResponse apiResponse = ApiResponse.<ProjectionBookDto>builder().message("message").statusCode(HttpStatus.OK.value()).list(list).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
@@ -79,23 +101,24 @@ public ResponseEntity<ApiResponse>getLimted(){
 
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/deleteById")
-    @Operation(summary = "Delete BookById",description = "This rout delete addedBook")
+    @Operation(summary = "Delete BookById", description = "This rout delete addedBook")
     //if used path varible need send id in path
-    public ResponseEntity<ApiResponse>deleteBookById(@RequestParam("id") String id){
+    public ResponseEntity<ApiResponse> deleteBookById(@RequestParam("id") String id) {
         addBookService.deleteAddedBookById(id);
-        ApiResponse apiResponse=ApiResponse.builder().message("SuccessfullyDeleted").statusCode(HttpStatus.OK.value()).build();
+        ApiResponse apiResponse = ApiResponse.builder().message("SuccessfullyDeleted").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PatchMapping("/editById")
-    @Operation(summary = "Edit By Id",description = "This rout helps to edit by id")
-    public ResponseEntity<ApiResponse>editBookById(@RequestParam("id") String id, @RequestBody UpdateBookDto updateBookDto){
-        addBookService.updateBookAdded(id,updateBookDto);
+    @Operation(summary = "Edit By Id", description = "This rout helps to edit by id")
+    public ResponseEntity<ApiResponse> editBookById(@RequestParam("id") String id, @RequestBody UpdateBookDto updateBookDto) {
+        addBookService.updateBookAdded(id, updateBookDto);
 
-        ApiResponse apiResponse=ApiResponse.builder().message("successfully edited").statusCode(HttpStatus.OK.value()).build();
+        ApiResponse apiResponse = ApiResponse.builder().message("successfully edited").statusCode(HttpStatus.OK.value()).build();
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
     }

@@ -1,4 +1,5 @@
 package com.nextstep.multiauhtnticate.service;
+
 import com.nextstep.multiauhtnticate.DTO.ProjectionBookDto;
 import com.nextstep.multiauhtnticate.DTO.SaveBookDto;
 import com.nextstep.multiauhtnticate.DTO.UpdateBookDto;
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,8 +28,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public  class AddBookServiceImpl implements AddBookService {
+public class AddBookServiceImpl implements AddBookService {
 
+
+    //    @Lazy //it can be used for notification which is not needed for every operation
     @Autowired
     BookRepo bookRepo;
     @Autowired
@@ -37,14 +41,17 @@ public  class AddBookServiceImpl implements AddBookService {
     ModelMapper modelMapper;
 
 
+    private Logger logger = LoggerFactory.getLogger(AddBookServiceImpl.class);
 
-    private Logger logger= LoggerFactory.getLogger(AddBookServiceImpl.class);
+//    @Lookup
+//    public AddBook getAddBookInstance() // Lookup for prototype-scoped bean
+//    {
+//        return null;
+//    }
+//In your case, @Scope("prototype") is not needed because the AddBook objects are tied to a
+//    persistent store (database) and don't require a fresh instance for each method call, as
+//    the service and repository manage them efficiently.
 
-    @Lookup
-    public AddBook getAddBookInstance() // Lookup for prototype-scoped bean
-    {
-        return null;
-    }
 
     @Transactional
     @Override
@@ -58,7 +65,7 @@ public  class AddBookServiceImpl implements AddBookService {
                 throw new UsernameNotFoundException("Logged-in user not found");
             }
 
-            AddBook addBook = getAddBookInstance();  // Get a fresh AddBook instance
+            AddBook addBook = new AddBook();
 
             modelMapper.map(addBookDto, addBook);
             addBook.setUserToAddBook(loggedInUser);
@@ -110,7 +117,7 @@ public  class AddBookServiceImpl implements AddBookService {
 
     @Override
     public void updateBookAdded(String id, UpdateBookDto updateAddBook) {
-        AddBook addBook1=modelMapper.map(updateAddBook,AddBook.class);
+        AddBook addBook1 = modelMapper.map(updateAddBook, AddBook.class);
         Optional<AddBook> addBookOptional = bookRepo.findById(id);
 
         if (addBookOptional.isPresent()) {
@@ -133,21 +140,34 @@ public  class AddBookServiceImpl implements AddBookService {
             bookRepo.save(existingBook);
         }
     }
+//    @Override
+//    public List<ProjectionBookDto> getProductWithThreefield() {
+//
+//        List<AddBookProjection> list = bookRepo.getAddBookWithRequiredAttribute();
+//        for (AddBookProjection li : list) {
+//            li.getNumberOfBook();
+//            li.getBookTitle();
+//            li.getBookCategory();
+//        }
+//
+//
+//        List<ProjectionBookDto> list1 = new ArrayList<>();
+//
+//        for (AddBookProjection addBookProjection : list) {
+//
+//            list1.add(new ProjectionBookDto(addBookProjection.getBookCategory(), addBookProjection.getBookTitle(), addBookProjection.getNumberOfBook()));
+//
+//        }
+//        return list1;
+//
+//    }
 
-    @Override
+
+//using jpql
+
+    //    JPQL (Java Persistence Query Language)
     public List<ProjectionBookDto> getProductWithThreefield() {
-
-        List<AddBookProjection>list=bookRepo.getAddBookWithRequiredAttribute();
-
-    List<ProjectionBookDto>list1=new ArrayList<>();
-
-    for(AddBookProjection addBookProjection:list){
-
-        list1.add(   new ProjectionBookDto(addBookProjection.getBookCategory(),addBookProjection.getBookTitle(),addBookProjection.getNumberOfBook()));
-
-    }
-return  list1;
-
+        return bookRepo.getAddBookWithRequiredAttribute();
     }
 
 
