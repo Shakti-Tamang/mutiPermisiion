@@ -7,8 +7,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.context.annotation.Scope;
-
+import org.hibernate.annotations.Cache;
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 //@Scope("prototype")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE) // Enable second-level caching
 @Table(name = "add_book", indexes = {
         @Index(name = "index_add_book_id", columnList = "id")})
 public class AddBook {

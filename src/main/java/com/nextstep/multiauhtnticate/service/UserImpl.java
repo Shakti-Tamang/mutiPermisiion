@@ -39,7 +39,7 @@ public class UserImpl implements UserService {
     private final RoleRepo roleRepo;
     private final CourseRepo courseRepo;
 
-    public UserImpl( UserRepository userRepository, RoleRepo roleRepo, CourseRepo courseRepo) {
+    public UserImpl(UserRepository userRepository, RoleRepo roleRepo, CourseRepo courseRepo) {
         this.userRepository = userRepository;
         this.roleRepo = roleRepo;
         this.courseRepo = courseRepo;
@@ -89,5 +89,10 @@ public class UserImpl implements UserService {
             ex.printStackTrace();
             throw new RuntimeException("User not registered: " + ex.getMessage());
         }
+    }
+
+
+    public long countuser() {
+        return userRepository.count();
     }
 }

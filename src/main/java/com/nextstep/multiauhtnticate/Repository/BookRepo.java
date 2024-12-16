@@ -9,19 +9,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
+import javax.persistence.QueryHint;
 import java.util.List;
 import java.util.Optional;
 
 
 //containing for saerch query
 @Repository
-public interface BookRepo extends JpaRepository<AddBook,String> {
+public interface BookRepo extends JpaRepository<AddBook, String> {
     //it is difficult approach  if
 
-//    user so passmodel
+    //    user so passmodel
     public List<AddBook> findByUserToAddBook(UserModel userModel);
 
 
@@ -67,10 +68,17 @@ public interface BookRepo extends JpaRepository<AddBook,String> {
 //    List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 
-//    By suing jpql
+    //    By suing jpql
     @Query("SELECT new com.nextstep.multiauhtnticate.DTO.ProjectionBookDto(b.bookTitle, b.bookCategory, b.numberOfBook) FROM AddBook b")
+    @QueryHints({
+            @QueryHint(name = "org.hibernate.readOnly", value = "true"),
+            @QueryHint(name = "org.hibernate.fetchSize", value = "50"),
+            @QueryHint(name = "org.hibernate.cacheable", value = "true"),
+            @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
+            @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
+            @QueryHint(name = "javax.persistence.query.timeout", value = "2000")
+    })
     List<ProjectionBookDto> getAddBookWithRequiredAttribute();
-
 
 
 }
