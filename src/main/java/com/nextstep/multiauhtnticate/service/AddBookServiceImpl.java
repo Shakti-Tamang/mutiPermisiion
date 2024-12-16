@@ -14,6 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -53,6 +56,13 @@ public class AddBookServiceImpl implements AddBookService {
 //    the service and repository manage them efficiently.
 
 
+
+
+
+//    in summary, the @CacheEvict is ensuring that when a new book is added through the addBook
+//        method, any cached values related to the addBookCache are cleared so the cache will be
+//    updated with the new state when queried again.
+   @CacheEvict(value = "addBookCache", allEntries = true)
     @Transactional
     @Override
     public void addBook(SaveBookDto addBookDto) {
@@ -90,11 +100,18 @@ public class AddBookServiceImpl implements AddBookService {
         }
     }
 
+
+
+    @CacheEvict(value = "addBookCache", key = "#id")
     @Override
     public void deleteAddedBookById(String id) {
         bookRepo.deleteById(id);
     }
 
+
+
+
+    @Cacheable(value = "addBookCache", key = "#pageNumber + '-' + #pageSize + '-' + #bookTitle")
     @Override
     public List<SaveBookDto> listOfAddedBook(Integer pageNumber, Integer pageSize, String bookTitle) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
@@ -115,6 +132,7 @@ public class AddBookServiceImpl implements AddBookService {
     }
 
 
+    @CachePut(value = "addBookCache", key = "#id")
     @Override
     public void updateBookAdded(String id, UpdateBookDto updateAddBook) {
         AddBook addBook1 = modelMapper.map(updateAddBook, AddBook.class);
@@ -166,7 +184,11 @@ public class AddBookServiceImpl implements AddBookService {
 //using jpql
 
     //    JPQL (Java Persistence Query Language)
+
+
     public List<ProjectionBookDto> getProductWithThreefield() {
+
+
         return bookRepo.getAddBookWithRequiredAttribute();
     }
 
