@@ -24,5 +24,4 @@ public interface UserRepository extends JpaRepository<UserModel,String> {
 
 
 
-
 }

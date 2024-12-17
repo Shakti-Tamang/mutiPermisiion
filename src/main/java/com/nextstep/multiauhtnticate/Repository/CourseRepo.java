@@ -41,13 +41,11 @@ public interface CourseRepo extends JpaRepository<Courses,String> {
 //
 
     //
-    //jpql
+//    //jpql
     @Query("SELECT c FROM Courses c JOIN c.usersCourse u WHERE u.faculty = :faculty")
     List<Courses> findCoursesByUserFaculty(@Param("faculty") String faculty);
 
     List<Courses> findByCourseCode(String code);
 
-//    you cannot create the same cutom method which is already provided by jpa
-    public List<Courses> findAllById(List<String>id);
-//    this can cuase error native
+
 }

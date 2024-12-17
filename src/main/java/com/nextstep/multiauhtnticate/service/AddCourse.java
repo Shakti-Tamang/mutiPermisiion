@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AddCourse {
     public void saveCourse(Courses courses, String faculty);
+
+//    public List<ourse>
 }
