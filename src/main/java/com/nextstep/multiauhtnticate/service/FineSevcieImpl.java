@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -35,21 +36,21 @@ public class FineSevcieImpl implements FineService {
         //prsent Time
         LocalDateTime now = LocalDateTime.now();
 
-        List<BookCheckout> list = bookCheckoutRepo.findByCheckoutDateBeforeAndDueDateFalse(now);
+        List<BookCheckout> list = bookCheckoutRepo.findByDueDateBefore(now);
         for (BookCheckout li : list) {
             if (fineModel.getId() == null || fineModel.getId().isEmpty()) {
                 String hahId = StringUtills.generateRandomAlphaNumeric(6);
                 //find difference between due date and present datye:
-                  long lateToSubmitDate= ChronoUnit.DAYS.between(li.getDueDate(),now);
+                long lateToSubmitDate = ChronoUnit.DAYS.between(li.getDueDate(), now);
 
-                  if(lateToSubmitDate<0) {
-                     short amount=fineModel.getFine();
-                     if(amount>0){
-                         fineModel.setFine((short) (amount+10));
-                     }
+                if (lateToSubmitDate < 0) {
+                    short amount = fineModel.getFine();
+                    if (amount > 0) {
+                        fineModel.setFine((short) (amount + 10));
+                    }
 
-                      fineModel.setId(hahId);
-                  }
+                    fineModel.setId(hahId);
+                }
             }
         }
         fineModel.getUserFine().setFineUser(fineModel);

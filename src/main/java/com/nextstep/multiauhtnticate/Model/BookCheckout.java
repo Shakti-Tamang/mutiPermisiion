@@ -43,5 +43,4 @@ public class BookCheckout {
     @JsonBackReference("bookaddedCheckout")
     private AddBook addBookCheckout;
 
-
 }
