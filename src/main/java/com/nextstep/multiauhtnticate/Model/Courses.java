@@ -57,7 +57,7 @@ public class Courses {
 //    the circular structure indefinitely.
 
     @Schema(hidden = true)
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_courses",
             joinColumns = @JoinColumn(name = "course_id"),

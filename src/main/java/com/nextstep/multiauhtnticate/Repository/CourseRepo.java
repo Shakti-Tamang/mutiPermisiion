@@ -3,9 +3,11 @@ package com.nextstep.multiauhtnticate.Repository;
 import com.nextstep.multiauhtnticate.Model.Courses;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.QueryHint;
 import java.util.List;
 
 
@@ -42,7 +44,15 @@ public interface CourseRepo extends JpaRepository<Courses,String> {
 
     //
 //    //jpql
-    @Query("SELECT c FROM Courses c JOIN c.usersCourse u WHERE u.faculty = :faculty")
+    @Query("SELECT DISTINCT c FROM Courses c LEFT JOIN c.usersCourse u WHERE u.faculty = :faculty")
+    @QueryHints({
+            @QueryHint(name = "org.hibernate.readOnly", value = "true"),
+            @QueryHint(name = "org.hibernate.fetchSize", value = "50"),
+            @QueryHint(name = "org.hibernate.cacheable", value = "true"),
+            @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
+            @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
+            @QueryHint(name = "javax.persistence.query.timeout", value = "2000")
+    })
     List<Courses> findCoursesByUserFaculty(@Param("faculty") String faculty);
 
     List<Courses> findByCourseCode(String code);

@@ -160,38 +160,41 @@ public class AddBookServiceImpl implements AddBookService {
             bookRepo.save(existingBook);
         }
     }
-//    @Override
-//    public List<ProjectionBookDto> getProductWithThreefield() {
-//
-//        List<AddBookProjection> list = bookRepo.getAddBookWithRequiredAttribute();
-//        for (AddBookProjection li : list) {
-//            li.getNumberOfBook();
-//            li.getBookTitle();
-//            li.getBookCategory();
-//        }
-//
-//
-//        List<ProjectionBookDto> list1 = new ArrayList<>();
-//
-//        for (AddBookProjection addBookProjection : list) {
-//
-//            list1.add(new ProjectionBookDto(addBookProjection.getBookCategory(), addBookProjection.getBookTitle(), addBookProjection.getNumberOfBook()));
-//
-//        }
-//        return list1;
-//
-//    }
+    @Override
+    public List<ProjectionBookDto> getProductWithThreefield() {
+
+        List<AddBookProjection> list = bookRepo.getAddBookWithRequiredAttribute();
+        for (AddBookProjection li : list) {
+            li.getNumberOfBook();
+            li.getBookTitle();
+            li.getBookCategory();
+        }
+
+
+        List<ProjectionBookDto> list1 = new ArrayList<>();
+
+        for (AddBookProjection addBookProjection : list) {
+
+            list1.add(new ProjectionBookDto(addBookProjection.getBookCategory(), addBookProjection.getBookTitle(), addBookProjection.getNumberOfBook()));
+
+        }
+        return list1;
+
+    }
+
+
 
 
 //using jpql
 
     //    JPQL (Java Persistence Query Language)
 
+    //it is for easiest last one in custome methos finder
 
-    public List<ProjectionBookDto> getProductWithThreefield() {
+    public List<ProjectionBookDto> getProductWithThreefieldWithNoInterFce() {
 
 
-        return bookRepo.getAddBookWithRequiredAttribute();
+        return bookRepo.getAddBookWithRequiredAttributes();
     }
 
 

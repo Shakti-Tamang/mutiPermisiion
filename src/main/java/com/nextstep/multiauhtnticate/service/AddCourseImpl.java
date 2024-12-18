@@ -1,5 +1,6 @@
 package com.nextstep.multiauhtnticate.service;
 
+import com.nextstep.multiauhtnticate.DTO.CourseDTO;
 import com.nextstep.multiauhtnticate.Model.Courses;
 import com.nextstep.multiauhtnticate.Model.UserModel;
 import com.nextstep.multiauhtnticate.Repository.CourseRepo;
@@ -12,9 +13,10 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
-public class AddCourseImpl implements  AddCourse {
+public class AddCourseImpl implements AddCourse {
 
     @Autowired
     UserRepository userRepository;
@@ -58,4 +60,22 @@ public class AddCourseImpl implements  AddCourse {
         }
     }
 
+    @Override
+    public List<CourseDTO> listOfCoursesByFaculty(String faculty) {
+        List<Courses> list = courseRepo.findCoursesByUserFaculty(faculty);
+        return list.stream().map(this::mapToDTO).collect(Collectors.toList());
+    }
+
+
+    private CourseDTO mapToDTO(Courses courses) {
+
+        CourseDTO dto = new CourseDTO();
+        dto.setTitle(courses.getTitle());
+        dto.setCourseCode(courses.getCourseCode());
+        dto.setCourseDescription(courses.getCoursediscription());
+        dto.setCourseId(courses.getCourseId());
+        dto.setModeOfDelivery(courses.getModeOfDelivery());
+        return  dto;
+
+    }
 }

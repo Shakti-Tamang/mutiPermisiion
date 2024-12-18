@@ -60,8 +60,16 @@ public interface BookRepo extends JpaRepository<AddBook, String> {
 
 
 //    inteface approach for jpql:
-//@Query("SELECT b.bookTitle AS bookTitle, b.bookCategory AS bookCategory, b.numberOfBook AS numberOfBook FROM AddBook b")
-//List<AddBookProjection> getAddBookWithRequiredAttribute();
+@Query("SELECT b.bookTitle AS bookTitle, b.bookCategory AS bookCategory, b.numberOfBook AS numberOfBook FROM AddBook b")  @QueryHints({
+        @QueryHint(name = "org.hibernate.readOnly", value = "true"),
+        @QueryHint(name = "org.hibernate.fetchSize", value = "50"),
+        @QueryHint(name = "org.hibernate.cacheable", value = "true"),
+        @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
+        @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
+        @QueryHint(name = "javax.persistence.query.timeout", value = "2000")
+})
+
+List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 //    native
 //    @Query(value = "SELECT book_title AS bookTitle, book_category AS bookCategory, number_of_book AS numberOfBook FROM add_book", nativeQuery = true)
@@ -78,7 +86,7 @@ public interface BookRepo extends JpaRepository<AddBook, String> {
             @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
             @QueryHint(name = "javax.persistence.query.timeout", value = "2000")
     })
-    List<ProjectionBookDto> getAddBookWithRequiredAttribute();
+    List<ProjectionBookDto> getAddBookWithRequiredAttributes();
 
 
 }
