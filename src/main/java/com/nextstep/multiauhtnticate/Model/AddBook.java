@@ -64,6 +64,4 @@ public class AddBook {
     @OneToMany(mappedBy = "addBookCheckout", cascade = CascadeType.ALL)
     @JsonManagedReference("bookaddedCheckout")
     private List<BookCheckout> listOfCheckoutBook;
-
-
 }

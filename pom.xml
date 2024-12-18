@@ -2,6 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+
+<!--    Maven is a free tool that helps Java developers automate tasks like compiling code, managing-->
+<!--    external libraries, and packaging applications. It simplifies the development process by-->
+<!--    handling these tasks automatically-->
+
+<!--    The pom.xml file in Maven is an XML configuration file that defines a project's structure,-->
+<!--    dependencies, and build settings. It specifies essential information such as the project's-->
+<!--    coordinates (group ID, artifact ID, and version), dependencies on external libraries, plugins-->
+<!--    for building and testing, and other configurations necessary for the build process. This file-->
+<!--    serves as the central point for Maven to understand how to compile, test, and package the project.-->
+<!--    APACHE MAVEN-->
+
+<!--    For a more detailed explanation, you might find the following video helpful:-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
