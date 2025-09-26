@@ -56,6 +56,41 @@ public class Courses {
 //    during JSON serialization, as the serialization process keeps traversing
 //    the circular structure indefinitely.
 
+
+//     Yes — both @JsonIgnoreProperties and fetch = FetchType.LAZY help in different ways, but they solve different problems:
+
+// 🔹 1. @JsonIgnoreProperties("courseList")
+
+// Purpose: Prevents infinite recursion (endless loop) during JSON serialization.
+
+// Example problem without it:
+
+// Course → has users
+
+// User → has courseList
+
+// Jackson tries to serialize everything → loops forever.
+
+// ✅ With @JsonIgnoreProperties("courseList"), Jackson will skip serializing courseList when serializing User inside Course. That breaks the loop.
+
+// 🔹 2. fetch = FetchType.LAZY
+
+// Purpose: Controls when data is fetched from the database, not JSON recursion.
+
+// With LAZY, users won’t be fetched until you explicitly call course.getUsers().
+
+// Prevents unnecessary data loading (performance optimization).
+
+// ⚠️ Important: LAZY does not stop infinite recursion by itself — it just delays loading. If Jackson tries to serialize users, it will still fetch them and can still recurse unless @JsonIgnoreProperties (or @JsonManagedReference / @JsonBackReference) is used.
+
+// ✅ Conclusion
+
+// @JsonIgnoreProperties (or @JsonManagedReference + @JsonBackReference) solves endless loop in JSON.
+
+// fetch = FetchType.LAZY solves performance problems, not recursion.
+
+// 👉 If your only problem is recursion → you must use @JsonIgnoreProperties (or the reference annotations).
+
     @Schema(hidden = true)
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -68,3 +103,4 @@ public class Courses {
 
 
 }
+
