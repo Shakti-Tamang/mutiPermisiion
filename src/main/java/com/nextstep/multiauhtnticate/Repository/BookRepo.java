@@ -65,7 +65,10 @@ public interface BookRepo extends JpaRepository<AddBook, String> {
 
     // it for size of data to fetch
         @QueryHint(name = "org.hibernate.fetchSize", value = "50"),
+
+    // Remember this exact query result in Hibernate's private cache
         @QueryHint(name = "org.hibernate.cacheable", value = "true"),
+    // How to interact with Hibernate's cache
         @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
         @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
 
@@ -94,5 +97,6 @@ List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 
 }
+
 
 
