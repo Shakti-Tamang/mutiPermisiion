@@ -66,6 +66,8 @@ public interface BookRepo extends JpaRepository<AddBook, String> {
         @QueryHint(name = "org.hibernate.cacheable", value = "true"),
         @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
         @QueryHint(name = "javax.persistence.cache.storeMode", value = "USE"),
+
+    // it is for timeout
         @QueryHint(name = "javax.persistence.query.timeout", value = "2000")
 })
 
@@ -90,3 +92,4 @@ List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 
 }
+
