@@ -62,6 +62,8 @@ public interface BookRepo extends JpaRepository<AddBook, String> {
 //    inteface approach for jpql:
 @Query("SELECT b.bookTitle AS bookTitle, b.bookCategory AS bookCategory, b.numberOfBook AS numberOfBook FROM AddBook b")  @QueryHints({
         @QueryHint(name = "org.hibernate.readOnly", value = "true"),
+
+    // it for size of data to fetch
         @QueryHint(name = "org.hibernate.fetchSize", value = "50"),
         @QueryHint(name = "org.hibernate.cacheable", value = "true"),
         @QueryHint(name = "javax.persistence.cache.retrieveMode", value = "USE"),
@@ -92,4 +94,5 @@ List<AddBookProjection> getAddBookWithRequiredAttribute();
 
 
 }
+
 
